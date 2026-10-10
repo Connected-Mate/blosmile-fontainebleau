@@ -1,0 +1,12 @@
+node_modules/
+.local/
+public/uploads/
+.DS_Store
+.env
+blosmile-fontainebleau-local.zip
+
+.env.*
+dist/
+research/
+*.zip
+.blosmile-pages-*/

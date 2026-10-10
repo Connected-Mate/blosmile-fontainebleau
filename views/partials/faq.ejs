@@ -1,0 +1,1 @@
+<div class="faq-list"><% items.forEach((item,i)=>{ %><details class="faq-item"><summary><span><%= item.question %></span><span class="faq-toggle"><%- include('icon',{name:'plus'}) %></span></summary><div class="faq-answer"><p><%= item.answer %></p></div></details><% }) %></div>

@@ -1,0 +1,55 @@
+<% const p=content.practice, d=content.directions, copy=content.pages.directions || {}, isStatic=typeof staticMode !== "undefined" && staticMode, qrImage=qrProvider.staticImageUrl || "/itineraire/qr.png?app="+qrProvider.id; %>
+<section class="page-intro wrap directions-intro">
+  <p class="eyebrow">ADRESSE & ITINÉRAIRES · <%= p.city %></p>
+  <h1><%= copy.title || 'Le chemin vers' %><br><em><%= copy.accent || 'votre cabinet.' %></em></h1>
+  <p><%= copy.description || 'Retrouvez notre adresse, choisissez votre application et préparez votre venue en quelques instants.' %></p>
+</section>
+<section class="wrap arrival-layout" aria-label="Votre itinéraire vers le cabinet">
+  <div class="arrival-photo">
+    <img src="<%= content.home.heroImage %>" alt="Façade du cabinet <%= p.name %> au <%= d.addressLine %>" width="1615" height="1080" fetchpriority="high">
+    <div class="arrival-photo-caption"><%- include('icon',{name:'pin'}) %><span><%= p.address %><br><%= p.postalCode %> <%= p.city %></span></div>
+  </div>
+  <div class="arrival-card">
+    <p class="eyebrow">ON VOUS ATTEND ICI</p>
+    <h2><a class="arrival-address" href="<%= d.googleUrl %>" target="_blank" rel="noopener noreferrer"><%= p.address %><span><%= p.postalCode %> <%= p.city %></span></a></h2>
+    <div class="address-tools">
+      <button class="utility-button" type="button" data-copy-address="<%= d.addressLine %>" hidden><%- include('icon',{name:'copy'}) %> Copier l’adresse</button>
+      <a class="utility-button" href="/cabinet.vcf" download><%- include('icon',{name:'contact'}) %> Garder le contact</a>
+    </div>
+    <p class="directions-status" role="status" aria-live="polite" data-directions-status></p>
+    <h3>Votre itinéraire, à votre façon.</h3>
+    <%- include('directions-links') %>
+    <p class="provider-note">Votre choix ouvre l’application ou son site dans un nouvel onglet. Vous pourrez y indiquer votre point de départ.</p>
+  </div>
+</section>
+<section class="wrap arrival-extras">
+  <div class="arrival-practical">
+    <p class="eyebrow">POUR PRÉPARER VOTRE VENUE</p>
+    <h2>Les bons repères,<br><em>avant de partir.</em></h2>
+    <p><%= content.pages.contact.access %></p>
+    <div class="arrival-hours"><%- include('icon',{name:'clock'}) %><span><strong><%= p.hoursLabel %></strong><%= p.hoursSummary %></span></div>
+    <a class="text-link" href="/contact">Tous les horaires & informations pratiques <%- include('icon',{name:'arrow'}) %></a>
+    <p class="arrival-question">Une question sur l’accès au cabinet ? <a href="tel:<%= p.phoneInternational %>">Appelez-nous au <%= p.phone %></a>.</p>
+  </div>
+  <details class="phone-transfer" id="transfert-telephone" data-phone-transfer <%= qrRequested ? 'open' : '' %>>
+    <summary><span><span class="eyebrow">DE L’ORDINATEUR AU TÉLÉPHONE</span><strong>Emportez l’itinéraire.</strong></span><%- include('icon',{name:'plus'}) %></summary>
+    <div class="phone-transfer-body">
+      <p>Scannez ce QR code avec l’appareil photo de votre téléphone pour ouvrir l’itinéraire.</p>
+      <% if(isStatic){ %><div class="qr-picker" data-qr-form><% }else{ %><form method="get" action="/venir#transfert-telephone" class="qr-picker" data-qr-form><% } %>
+        <label for="qr-app" data-qr-label <%= isStatic ? "hidden" : "" %>>Application à ouvrir</label>
+        <select id="qr-app" name="app" data-qr-select <%= isStatic ? "hidden" : "" %>>
+          <% d.providers.forEach(provider=>{ %><option value="<%= provider.id %>" <%= provider.id === qrProvider.id ? 'selected' : '' %>><%= provider.name %></option><% }) %>
+        </select>
+        <% if(isStatic){ %>
+        <nav class="qr-fallback" data-qr-fallback aria-label="Choisir le QR code">
+          <% d.providers.forEach(provider=>{ %><a class="utility-button" href="<%= provider.staticPageUrl %>#transfert-telephone" <%= provider.id===qrProvider.id ? 'aria-current=page' : '' %>><%= provider.name %></a><% }) %>
+        </nav>
+        </div>
+        <% }else{ %><button type="submit" class="utility-button" data-qr-submit>Afficher le QR code</button></form><% } %>
+      <div class="qr-result">
+        <a href="<%= qrProvider.url %>" target="_blank" rel="noopener noreferrer" data-qr-link aria-label="Ouvrir le même itinéraire dans <%= qrProvider.name %>"><img data-qr-image src="<%= qrImage %>" width="180" height="180" alt="QR code vers <%= qrProvider.name %> pour le <%= d.addressLine %>" loading="lazy"></a>
+        <div><strong data-qr-caption><%= qrProvider.name %></strong><p><%= d.addressLine %></p><a href="<%= qrImage %>" download="itineraire-blosmile.png" data-qr-download>Télécharger le QR code</a><p role="status" data-qr-status></p></div>
+      </div>
+    </div>
+  </details>
+</section>

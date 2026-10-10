@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#183e3d">
+  <title>Administration · Blosmile</title>
+  <link rel="stylesheet" href="/admin/assets/admin.css">
+  <script src="/admin/assets/admin.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <div id="login-view" class="login-view" hidden>
+    <main class="login-card">
+      <a href="/" class="brand"><span class="admin-logo"><img src="/assets/blossmile-logo-original.jpg" alt="Blosmile" width="505" height="480"></span><span>Votre espace d’administration</span></a>
+      <p class="eyebrow">BIENVENUE CHEZ VOUS</p>
+      <h1>Un site qui vous ressemble.</h1>
+      <p>Retrouvez vos textes, votre équipe et vos images, au même endroit.</p>
+      <form id="login-form">
+        <label for="username">Identifiant</label>
+        <input id="username" name="username" autocomplete="username" value="admin" required maxlength="80">
+        <label for="password">Mot de passe</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required maxlength="200">
+        <button class="button primary" type="submit">Se connecter <span aria-hidden="true">↗</span></button>
+        <p id="login-error" class="error" role="alert"></p>
+      </form>
+      <a class="text-link" href="/">← Revenir au site</a>
+    </main>
+    <div class="login-art" aria-hidden="true"><span>Le soin<br>du détail.</span><i></i><i></i><i></i></div>
+  </div>
+  <div id="app-view" class="app-shell" hidden>
+    <aside class="sidebar">
+      <a href="/" class="brand"><span class="admin-logo"><img src="/assets/blossmile-logo-original.jpg" alt="Blosmile" width="505" height="480"></span><span>Administration</span></a>
+      <p class="sidebar-label">VOTRE SITE</p>
+      <nav id="navigation" aria-label="Sections de l’administration"></nav>
+      <div class="sidebar-bottom"><a href="/" target="_blank" rel="noopener">Voir le site ↗</a><button id="logout" class="plain-button">Se déconnecter</button></div>
+    </aside>
+    <div class="workspace">
+      <header class="toolbar">
+        <div><span class="eyebrow">ESPACE CABINET</span><p id="save-state">Chargement…</p></div>
+        <div class="toolbar-actions"><a href="/" class="button secondary preview" target="_blank" rel="noopener">Voir le site ↗</a><button id="save-button" class="button primary" disabled>Enregistrer</button></div>
+      </header>
+      <main id="main" class="main-content" tabindex="-1">
+        <div class="page-heading"><p class="eyebrow" id="section-kicker">CONTENU DU SITE</p><h1 id="section-title">Votre cabinet</h1><p id="section-description"></p></div>
+        <div id="notice" role="status" class="notice" hidden></div>
+        <div id="editor"></div>
+      </main>
+    </div>
+  </div>
+  <dialog id="media-dialog" aria-label="Choisir une photographie"><div class="dialog-heading"><div><p class="eyebrow">MÉDIATHÈQUE</p><h2>Une image, votre histoire.</h2></div><button id="close-media" class="icon-button" aria-label="Fermer la médiathèque">×</button></div><div id="dialog-media"></div></dialog>
+  <div id="loading" class="initial-loading" role="status">Ouverture de votre espace…</div>
+</body>
+</html>

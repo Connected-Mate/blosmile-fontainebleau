@@ -1,0 +1,20 @@
+import { DatabaseSync, backup } from 'node:sqlite';
+import { mkdirSync, cpSync, writeFileSync, existsSync, chmodSync } from 'node:fs';
+import { resolve, join } from 'node:path';
+const root=resolve(import.meta.dirname,'..');
+const local=join(root,'.local');
+const database=join(local,'blosmile.sqlite');
+if(!existsSync(database))throw new Error('Démarrez le site une première fois avant de créer une sauvegarde.');
+const stamp=new Date().toISOString().replace(/[:.]/g,'-');
+const folder=join(local,'backups',stamp);
+mkdirSync(folder,{recursive:true,mode:0o700});
+const db=new DatabaseSync(database,{readOnly:true});
+try{await backup(db,join(folder,'blosmile.sqlite'));}finally{db.close();}
+const snapshot=new DatabaseSync(join(folder,'blosmile.sqlite'));
+const state=snapshot.prepare('SELECT json,updated_at FROM content WHERE id=1').get();
+writeFileSync(join(folder,'content.json'),state.json,{mode:0o600});
+snapshot.exec('DELETE FROM sessions');snapshot.close();chmodSync(join(folder,'blosmile.sqlite'),0o600);
+if(existsSync(join(local,'uploads')))cpSync(join(local,'uploads'),join(folder,'uploads'),{recursive:true});
+cpSync(join(root,'public/assets'),join(folder,'assets'),{recursive:true});
+writeFileSync(join(folder,'manifest.json'),JSON.stringify({createdAt:new Date().toISOString(),contentUpdatedAt:state.updated_at,formatVersion:1,includes:['database','content','uploads','original-assets'],sessions:'removed from backup'},null,2),{mode:0o600});
+console.log(`Sauvegarde complète créée : ${folder}`);

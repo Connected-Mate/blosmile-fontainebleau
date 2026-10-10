@@ -1,0 +1,9 @@
+<div class="directions-links" role="group" aria-label="Choisir une application d’itinéraire">
+  <% content.directions.providers.forEach(provider=>{ %>
+  <a class="directions-provider" data-provider-id="<%= provider.id %>" data-qr-source="<%= provider.staticImageUrl || '/itineraire/qr.png?app='+provider.id %>" href="<%= provider.url %>" target="_blank" rel="noopener noreferrer" aria-label="Itinéraire avec <%= provider.name %> (nouvel onglet ou application)">
+    <span class="provider-mark" aria-hidden="true"><%= provider.mark %></span>
+    <span><strong><%= provider.name %></strong><small><%= provider.hint %></small></span>
+    <%- include('icon',{name:'upRight'}) %>
+  </a>
+  <% }) %>
+</div>
