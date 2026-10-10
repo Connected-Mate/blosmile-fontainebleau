@@ -21,7 +21,7 @@ const decode = value => value.replace(/&amp;/g, '&').replace(/&#39;/g, "'").repl
 before(async () => {
   directory = fs.mkdtempSync(path.join(os.tmpdir(), 'blosmile-pages-test-'));
   output = path.join(directory, 'public');
-  await buildPages({ siteUrl, outDir: output, indexable: true });
+  await buildPages({ siteUrl, outDir: output, indexable: true, preview: { enabled: false } });
   files = fs.readdirSync(output, { recursive: true }).filter(file => fs.statSync(path.join(output, file)).isFile());
   pages = files.filter(file => file.endsWith('.html'));
 });
@@ -106,9 +106,36 @@ test('Static artifact excludes authentication, local state, source files and cre
 
 test('Pages preview can preserve noindex while retaining correct public canonical links', async () => {
   const preview = path.join(directory, 'preview');
-  await buildPages({ siteUrl, outDir: preview, indexable: false });
+  await buildPages({ siteUrl, outDir: preview, indexable: false, preview: { enabled: false } });
   const html = fs.readFileSync(path.join(preview, 'index.html'), 'utf8');
   assert.match(html, /<meta name="robots" content="noindex, nofollow"/);
   assert.match(html, /rel="canonical" href="https:\/\/connected-mate\.github\.io\/blosmile-test\/"/);
   assert.doesNotMatch(fs.readFileSync(path.join(preview, 'sitemap.xml'), 'utf8'), /<loc>/);
+});
+
+test('Default demo forces noindex on every page and alias despite an explicit indexing flag', async () => {
+  const output = path.join(directory, 'demo');
+  const summary = await buildPages({ siteUrl, outDir: output, indexable: true });
+  assert.equal(summary.indexable, false);
+  assert.equal(summary.previewEnabled, true);
+  assert.equal(summary.preview.enabled, true);
+  assert.equal(summary.preview.collaborator, 'Victor Becquet');
+  assert.equal(summary.preview.expiresAt, '2026-10-17T17:30:00.000Z');
+  const htmlFiles = fs.readdirSync(output, { recursive: true }).filter(file => file.endsWith('.html'));
+  assert.ok(htmlFiles.length >= 40);
+  for (const file of htmlFiles) {
+    const html = fs.readFileSync(path.join(output, file), 'utf8');
+    assert.match(html, /<meta name="robots" content="noindex, nofollow, noarchive">/, file);
+    assert.match(html, /<title>Démo — /, file);
+    assert.doesNotMatch(html, /application\/ld\+json/, file);
+    assert.match(html, /<meta name="description" content="Prévisualisation temporaire[^\"]*Victor Becquet[^\"]*17 octobre 2026 à 19 h 30/, file);
+  }
+  assert.doesNotMatch(fs.readFileSync(path.join(output, 'sitemap.xml'), 'utf8'), /<loc>/);
+  const robots = fs.readFileSync(path.join(output, 'robots.txt'), 'utf8');
+  assert.match(robots, /Allow: \/blosmile-test\//);
+  assert.doesNotMatch(robots, /Disallow:|Sitemap:/);
+  const llms = fs.readFileSync(path.join(output, 'llms.txt'), 'utf8');
+  assert.match(llms, /ne constitue pas le site officiel/);
+  assert.match(llms, /accessible aux personnes qui la connaissent/);
+  assert.doesNotMatch(llms, /192 Rue Grande|Informations pratiques|Pages de référence|\]\(https?:/);
 });

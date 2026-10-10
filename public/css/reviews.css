@@ -1,0 +1,6 @@
+.google-reviews-section{display:grid;grid-template-columns:1fr 1fr;gap:45px 9%;align-items:center}
+.google-reviews-heading h2{margin-top:17px}
+.google-reviews-copy>p:first-child{max-width:430px;line-height:1.9}
+.google-reviews-copy .button{margin-top:25px;gap:22px}
+.google-reviews-copy .google-reviews-note{font-size:10px;line-height:1.7;margin-top:13px;color:#647578}
+@media(max-width:700px){.google-reviews-section{grid-template-columns:1fr;gap:24px}.google-reviews-copy .button{max-width:100%;font-size:11px;gap:12px;padding-inline:20px}}

@@ -35,7 +35,7 @@ jobs:
       - name: Export static website
         env:
           PAGES_URL: ${{ steps.pages.outputs.base_url }}
-        run: npm run build:pages
+        run: npm run release:pages
       - name: Upload public files only
         uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
         with:

@@ -1,0 +1,31 @@
+<% if (content.preview && content.preview.enabled) { const preview = content.preview; %>
+<aside class="demo-notice" aria-label="À propos de cette démonstration">
+  <div class="wrap demo-notice-inner">
+    <p><span class="demo-status-dot" aria-hidden="true"></span>Version de démonstration <span class="demo-notice-credit">· POC avec <%= preview.collaborator %></span></p>
+    <button class="demo-notice-trigger" type="button" data-open-demo aria-haspopup="dialog" aria-controls="demo-dialog" hidden>À propos de cette démo <span aria-hidden="true">↗</span></button>
+    <details class="demo-fallback">
+      <summary>À propos de cette démo</summary>
+      <div class="demo-fallback-copy">
+        <p>Cette preview est un proof of concept (POC) réalisé avec <%= preview.collaborator %>. Elle présente une proposition de refonte et ne constitue pas le site officiel du cabinet.</p>
+        <p>Cette adresse est configurée pour ne pas être indexée par les moteurs de recherche. Elle reste accessible à toute personne disposant du lien.</p>
+        <p>Retrait de la démonstration prévu le <time datetime="<%= preview.expiresAt %>"><%= preview.expiresLabel %></time> (heure de Paris).</p>
+      </div>
+    </details>
+  </div>
+</aside>
+<dialog class="demo-dialog" id="demo-dialog" aria-labelledby="demo-title" aria-describedby="demo-description" data-demo-version="<%= preview.expiresAt %>">
+  <form method="dialog" class="demo-dialog-content">
+    <button class="demo-dialog-close" type="submit" value="close" aria-label="Fermer la présentation de la démo"><span aria-hidden="true">×</span></button>
+    <span class="demo-dialog-symbol" aria-hidden="true">b.</span>
+    <p class="demo-eyebrow">Démonstration · Blosmile</p>
+    <h2 id="demo-title" tabindex="-1" autofocus>Une idée<br>à <em>découvrir.</em></h2>
+    <div class="demo-description" id="demo-description">
+      <p>Cette preview est un proof of concept (POC) réalisé avec <strong><%= preview.collaborator %></strong>. Elle présente une proposition de refonte et ne constitue pas le site officiel du cabinet.</p>
+      <p>Cette adresse est configurée pour ne pas être indexée par les moteurs de recherche. Elle reste accessible à toute personne disposant du lien.</p>
+    </div>
+    <div class="demo-expiry"><span class="demo-expiry-mark" aria-hidden="true">↗</span><p><span>Démonstration temporaire</span>Retrait prévu le <time datetime="<%= preview.expiresAt %>"><%= preview.expiresLabel %></time><small>Heure de Paris</small></p></div>
+    <button class="button demo-discover" type="submit" value="discover">Découvrir la démo <span aria-hidden="true">→</span></button>
+    <p class="demo-dialog-footnote">Ce message reste disponible en haut de chaque page.</p>
+  </form>
+</dialog>
+<% } %>

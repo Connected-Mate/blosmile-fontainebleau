@@ -126,7 +126,9 @@
     "mapUrl": "https://www.google.com/maps/search/?api=1&query=192+Rue+Grande+77300+Fontainebleau",
     "siteUrl": "",
     "heroImage": "/assets/cabinet-facade-fontainebleau.jpeg",
-    "hoursLabel": "Du lundi au vendredi"
+    "hoursLabel": "Du lundi au vendredi",
+    "googleReviewsUrl": "https://www.google.com/maps/search/?api=1&query=Cabinets%20dentaires%20blosmile%20192%20Rue%20Grande%2077300%20Fontainebleau&query_place_id=ChIJ1eahBGH05UcRn10bSWzIWXI",
+    "googlePlaceId": "ChIJ1eahBGH05UcRn10bSWzIWXI"
   },
   "home": {
     "eyebrow": "CABINETS DENTAIRES · FONTAINEBLEAU",

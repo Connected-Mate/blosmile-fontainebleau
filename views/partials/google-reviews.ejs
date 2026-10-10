@@ -1,0 +1,13 @@
+<% if (content.practice.googleReviewsUrl) { %>
+<section class="google-reviews-section section-space wrap" aria-labelledby="google-reviews-title">
+  <div class="google-reviews-heading">
+    <p class="eyebrow">LES AVIS DES PATIENTS</p>
+    <h2 id="google-reviews-title">Faire connaissance,<br><em>en toute confiance.</em></h2>
+  </div>
+  <div class="google-reviews-copy">
+    <p>Retrouvez les expériences partagées par les patients sur la fiche Google des cabinets dentaires Blosmile, à Fontainebleau.</p>
+    <a class="button" href="<%= content.practice.googleReviewsUrl %>" target="_blank" rel="noopener noreferrer">Consulter les avis sur Google <%- include('icon', {name:'upRight'}) %></a>
+    <p class="google-reviews-note">Ouvre la fiche du cabinet dans Google Maps · rubrique Avis.</p>
+  </div>
+</section>
+<% } %>

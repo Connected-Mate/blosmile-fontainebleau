@@ -7,7 +7,7 @@ Refonte locale complète, en français, du site du cabinet. L’identité repren
 - Site public : https://connected-mate.github.io/blosmile-fontainebleau/
 - Dépôt : https://github.com/Connected-Mate/blosmile-fontainebleau
 
-Chaque push sur `main` lance les 25 tests, vérifie le rendu puis publie uniquement le dossier statique généré. Le déploiement utilise GitHub Actions et GitHub Pages ; les actions sont fixées à leurs commits. Les pages, photos, polices, itinéraires et QR fonctionnent sans serveur applicatif. Les URL et métadonnées tiennent compte du sous-dossier du dépôt.
+Chaque push sur `main` lance les tests automatisés, vérifie le rendu puis publie uniquement le dossier statique généré. Le déploiement utilise GitHub Actions et GitHub Pages ; les actions sont fixées à leurs commits. Les pages, photos, polices, itinéraires et QR fonctionnent sans serveur applicatif. Les URL et métadonnées tiennent compte du sous-dossier du dépôt.
 
 **Le back-office reste local.** GitHub Pages ne fait pas tourner Express ou SQLite. Les mots de passe, sessions, sauvegardes, fichiers `.env` et données de `.local` ne sont jamais exportés. Le site public ne contient pas de lien vers une administration indisponible. Les sources du back-office sont conservées dans ce dépôt pour son utilisation locale.
 
@@ -27,11 +27,13 @@ git push
 Pour contrôler le résultat statique avant un push :
 
 ```sh
-PAGES_URL=https://connected-mate.github.io/blosmile-fontainebleau npm run build:pages
+PAGES_URL=https://connected-mate.github.io/blosmile-fontainebleau npm run release:pages
 npm run preview:pages
 ```
 
-L’aperçu utilise le port 4173 et le même sous-dossier que le site public. `PAGES_INDEXABLE=false` permet un export non indexable ; l’export public normal active l’indexation sur l’URL HTTPS réelle. Les variantes de choix QR et les anciennes adresses restent en noindex. Les anciennes URL sont des pages de redirection HTML, GitHub Pages ne permettant pas les redirections serveur personnalisées.
+L’aperçu utilise le port 4173 et le même sous-dossier que le site public. **Cette version est une démonstration temporaire réalisée avec Victor Becquet.** `data/preview.json` impose `noindex, nofollow, noarchive` sur toutes les pages et redirections, supprime les données structurées de la preview et laisse le sitemap vide. La popup apparaît une fois par session et reste accessible depuis le bandeau. La non-indexation ne protège pas l’accès : le lien reste public et le dépôt GitHub également. Les variantes de choix QR et les anciennes adresses restent en noindex. Les anciennes URL sont des pages de redirection HTML, GitHub Pages ne permettant pas les redirections serveur personnalisées.
+
+Le retrait est prévu le **17 octobre 2026 à 19 h 30, heure de Paris**. Le workflow `expire-preview.yml` tente la fermeture à 17 h 30 UTC, puis plusieurs fois le soir même et le lendemain. À l’échéance, `release:pages` remplace toutes les pages et médias exportés par une page de fermeture ; les push ultérieurs restent fermés tant que le mode preview est actif. GitHub peut retarder une exécution planifiée. Un suivi dans Codex demande aussi la désactivation de GitHub Pages, en conservant le dépôt et les fichiers locaux ; ce suivi local nécessite que l’application et l’ordinateur soient disponibles. Le site officiel ne doit être publié qu’après décision explicite de désactiver la preview et validation du cabinet.
 
 Les mentions d’hébergement et la confidentialité sont adaptées à GitHub Pages dans l’export uniquement. Les renseignements juridiques manquants restent indiqués. Un domaine personnalisé n’a pas été enregistré.
 
@@ -70,6 +72,10 @@ Modifier **Votre cabinet → Adresse / Code postal / Ville** met à jour les iti
 
 La navigation mobile, le carrousel et la galerie ont été renforcés : clavier, restitution du focus, défilement borné, respect du mouvement réduit, affichage tactile et replis pour les API absentes. Contrôles visuels dans le navigateur intégré aux largeurs 320, 390, 701, 768 et ordinateur ; ce contrôle ne remplace pas des essais sur iPhone/Android physiques et sur chaque moteur Safari/Firefox/Chrome/Edge. L’ouverture d’applications natives doit encore être confirmée sur ces appareils.
 
+## Avis Google
+
+L’accueil et le pied de page ouvrent la fiche vérifiée **Cabinets dentaires blosmile**, 192 Rue Grande, via son identifiant Google `ChIJ1eahBGH05UcRn10bSWzIWXI`. Les avis sont consultables dans la rubrique Avis de Google Maps. Aucun avis, nombre d’avis ou score n’est recopié ni simulé ; aucune synchronisation Google Places API n’est activée. Le lien est modifiable dans **Votre cabinet → Fiche Google et avis du cabinet**.
+
 ## Modifier le contenu
 
 1. Ouvrir `/admin` et se connecter.
@@ -98,7 +104,7 @@ npm run backup
 
 Conserver régulièrement une copie du projet et des sauvegardes sur un autre support. L’archive de livraison contient le code et le contenu initial, sans mots de passe, sessions ni dépendances installées. Pour restaurer complètement une sauvegarde, arrêter le serveur, conserver une copie de `.local`, remplacer sa base SQLite par celle de la sauvegarde et son dossier `uploads`, puis redémarrer. Supprimer les anciens fichiers `blosmile.sqlite-wal` et `blosmile.sqlite-shm` uniquement après l’arrêt du serveur et après avoir sauvegardé le dossier complet. Les médias d’origine sont aussi présents dans le dossier `assets` de chaque sauvegarde.
 
-`npm run reset-admin` crée un nouvel accès et invalide les anciennes sessions. Le serveur ne contient aucune donnée patient et le CMS n’est pas un logiciel de dossiers médicaux. Aucune tâche récurrente externe n’a été installée : les commandes d’entretien sont disponibles à la demande.
+`npm run reset-admin` crée un nouvel accès et invalide les anciennes sessions. Le serveur ne contient aucune donnée patient et le CMS n’est pas un logiciel de dossiers médicaux. Les commandes d’entretien restent disponibles à la demande. La fermeture de la preview est planifiée comme décrit plus haut.
 
 ## Bilan de la livraison locale
 

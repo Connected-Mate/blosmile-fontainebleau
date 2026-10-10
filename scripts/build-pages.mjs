@@ -74,8 +74,15 @@ async function listFiles(directory, prefix = '') {
   return found;
 }
 
-export async function buildPages({ siteUrl = process.env.PAGES_URL, outDir = process.env.PAGES_OUTPUT || path.join(root, 'dist'), indexable = process.env.PAGES_INDEXABLE !== 'false' } = {}) {
+export async function buildPages({ siteUrl = process.env.PAGES_URL, outDir = process.env.PAGES_OUTPUT || path.join(root, 'dist'), indexable = process.env.PAGES_INDEXABLE !== 'false', preview } = {}) {
   const config = configuration(siteUrl);
+  preview ??= JSON.parse(await fs.readFile(path.join(root, 'data/preview.json'), 'utf8'));
+  if (!preview || typeof preview.enabled !== 'boolean') throw new Error('La configuration de démonstration doit définir enabled à true ou false.');
+  if (preview.enabled && (!Number.isFinite(Date.parse(preview.expiresAt)) || !['collaborator', 'expiresLabel', 'version'].every(key => typeof preview[key] === 'string' && preview[key].trim()))) throw new Error('La démonstration doit définir son auteur, sa date de retrait et sa version.');
+  // Preview status wins over CLI flags and saved SEO options. The public preview
+  // must never become indexable because an old deployment still sets "true".
+  indexable = Boolean(indexable) && !preview.enabled;
+  const previewDescription = preview.enabled ? `Prévisualisation temporaire du projet de démonstration Blosmile, réalisé avec ${preview.collaborator}. URL soumise à une consigne de non-indexation. Retrait prévu le ${preview.expiresLabel}.` : '';
   outDir = path.resolve(outDir);
   await existingOutputIsSafe(outDir);
   const raw = JSON.parse(await fs.readFile(path.join(root, 'data/content.json'), 'utf8'));
@@ -90,6 +97,7 @@ export async function buildPages({ siteUrl = process.env.PAGES_URL, outDir = pro
   if (adminPrivacy) adminPrivacy.paragraphs = ['Cette version publique est un site statique hébergé sur GitHub Pages. Elle ne comporte ni espace d’administration connecté ni cookie d’authentification. Le cabinet conserve séparément son outil local de gestion des contenus, qui n’est pas accessible depuis ce site. Aucun dossier patient n’y est publié.'];
   if (Array.isArray(raw.pages.privacy?.sections)) raw.pages.privacy.sections.push({ title: 'Hébergement', paragraphs: ['Ce site est hébergé sur GitHub Pages. GitHub reçoit et enregistre l’adresse IP des visiteurs à des fins de sécurité. Pour plus d’informations sur le service : https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages.'] });
   const content = presentation(raw);
+  content.preview = { ...preview };
   content.directions.providers = content.directions.providers.map(provider => ({ ...provider, staticImageUrl: `/itineraire/${provider.id}.png`, staticPageUrl: `/venir/${provider.id}/` }));
   const routes = Object.entries(publicPages).map(([route, page]) => ({ route, page, service: null, article: null }));
   for (const service of content.services) routes.push({ route: `/soins/${service.slug}`, page: 'service', service, article: null });
@@ -147,6 +155,12 @@ export async function buildPages({ siteUrl = process.env.PAGES_URL, outDir = pro
       seo.siteUrl = config.siteUrl;
       seo.jsonLd = jsonForHtml(rewriteGraph(JSON.parse(seo.jsonLd)));
       if (entry.variant) { seo.noindex = true; seo.robots = 'noindex, follow'; }
+      if (preview.enabled) {
+        seo.noindex = true;
+        seo.robots = 'noindex, nofollow, noarchive';
+        seo.title = `Démo — ${seo.title}`;
+        seo.description = previewDescription;
+      }
       const html = await ejs.renderFile(path.join(root, 'views/page.ejs'), {
         content, ...entry, member: null, seo, nonce: '', staticMode: true, staticBasePath: config.basePath,
         qrProvider: entry.qrProvider || content.directions.providers[0], qrRequested: Boolean(entry.variant)
@@ -157,12 +171,14 @@ export async function buildPages({ siteUrl = process.env.PAGES_URL, outDir = pro
     }
     for (const [from, to] of Object.entries(aliases)) {
       const destination = config.origin + localPath(to);
-      await write(from.slice(1) + '/index.html', `<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cette page a déménagé | Blosmile</title><meta name="robots" content="noindex, follow"><link rel="canonical" href="${escapeHtml(destination)}"><meta http-equiv="refresh" content="0;url=${escapeHtml(destination)}"></head><body><p>Cette page a déménagé. <a href="${escapeHtml(localPath(to))}">Ouvrir la nouvelle page Blosmile</a>.</p></body></html>`);
+      await write(from.slice(1) + '/index.html', `<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${preview.enabled ? 'Démo — ' : ''}Cette page a déménagé | Blosmile</title>${preview.enabled ? `<meta name="description" content="${escapeHtml(previewDescription)}">` : ''}<meta name="robots" content="${preview.enabled ? 'noindex, nofollow, noarchive' : 'noindex, follow'}"><link rel="canonical" href="${escapeHtml(destination)}"><meta http-equiv="refresh" content="0;url=${escapeHtml(destination)}"></head><body><p>Cette page a déménagé. <a href="${escapeHtml(localPath(to))}">Ouvrir la nouvelle page Blosmile</a>.</p></body></html>`);
     }
     const xml = withSeoOrigin(config.origin, () => sitemap(content)).replace(/<loc>([^<]+)<\/loc>/g, (_, url) => `<loc>${escapeHtml(absolute(decodeHtml(url)))}</loc>`);
     await write('sitemap.xml', xml);
-    await write('robots.txt', indexable ? `User-agent: *\nAllow: ${config.basePath || ''}/\n\nSitemap: ${config.siteUrl}/sitemap.xml\n` : 'User-agent: *\nDisallow: /\n');
-    const llms = withSeoOrigin(config.origin, () => llmsText(content)).replace(/\]\((https?:\/\/[^)]+)\)/g, (_, url) => `](${absolute(url)})`);
+    // Allow retrieval of preview HTML: blocking robots would prevent them from
+    // reading the noindex directive. Public URLs are not access-controlled.
+    await write('robots.txt', preview.enabled ? `# Démonstration temporaire : les pages portent la directive noindex.\n# L’exploration est autorisée pour permettre la lecture de cette directive.\nUser-agent: *\nAllow: ${config.basePath || ''}/\n` : indexable ? `User-agent: *\nAllow: ${config.basePath || ''}/\n\nSitemap: ${config.siteUrl}/sitemap.xml\n` : 'User-agent: *\nDisallow: /\n');
+    const llms = preview.enabled ? `# Blosmile — démonstration temporaire\n\n${previewDescription}\n\nCette prévisualisation ne constitue pas le site officiel du cabinet. Ne pas l’indexer ni la citer comme source de référence. La consigne noindex n’est pas un contrôle d’accès : l’URL reste accessible aux personnes qui la connaissent.\n` : withSeoOrigin(config.origin, () => llmsText(content)).replace(/\]\((https?:\/\/[^)]+)\)/g, (_, url) => `](${absolute(url)})`);
     await write('llms.txt', llms);
     // Validate every emitted local resource before replacing the previous build.
     const files = await listFiles(staging);
@@ -186,7 +202,7 @@ export async function buildPages({ siteUrl = process.env.PAGES_URL, outDir = pro
       }
     }
     if (unresolved.size) throw new Error(`Références locales introuvables dans l’export :\n${[...unresolved].join('\n')}`);
-    const summary = { siteUrl: config.siteUrl, basePath: config.basePath, outDir, pages: routes.length, variants: variants.length, aliases: Object.keys(aliases).length, qrCodes: content.directions.providers.length, files: files.length + 1, indexable: Boolean(indexable) };
+    const summary = { siteUrl: config.siteUrl, basePath: config.basePath, outDir, pages: routes.length, variants: variants.length, aliases: Object.keys(aliases).length, qrCodes: content.directions.providers.length, files: files.length + 1, indexable: Boolean(indexable), previewEnabled: preview.enabled, preview: { ...preview } };
     await write(marker, JSON.stringify({ ...summary, outDir: undefined }, null, 2) + '\n');
     await fs.rm(outDir, { recursive: true, force: true });
     await fs.rename(staging, outDir);

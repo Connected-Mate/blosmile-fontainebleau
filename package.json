@@ -12,9 +12,10 @@
     "reset-admin": "node scripts/reset-admin.mjs",
     "backup": "node scripts/backup.mjs",
     "health": "node scripts/health.mjs",
-    "build:pages": "node scripts/build-pages.mjs",
+    "build:pages": "node scripts/release-pages.mjs",
     "preview:pages": "node scripts/preview-pages.mjs",
-    "sync:pages": "node scripts/sync-pages-content.mjs"
+    "sync:pages": "node scripts/sync-pages-content.mjs",
+    "release:pages": "node scripts/release-pages.mjs"
   },
   "engines": {
     "node": ">=22.16"
