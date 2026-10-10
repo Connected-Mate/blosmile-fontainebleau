@@ -6,7 +6,7 @@
 </section>
 <section class="wrap arrival-layout" aria-label="Votre itinéraire vers le cabinet">
   <div class="arrival-photo">
-    <img src="<%= content.home.heroImage %>" alt="Façade du cabinet <%= p.name %> au <%= d.addressLine %>" width="1615" height="1080" fetchpriority="high">
+    <img src="<%= content.home.arrivalImage || content.home.heroImage %>" alt="Façade du cabinet <%= p.name %> au <%= d.addressLine %>" width="1615" height="1080" fetchpriority="high">
     <div class="arrival-photo-caption"><%- include('icon',{name:'pin'}) %><span><%= p.address %><br><%= p.postalCode %> <%= p.city %></span></div>
   </div>
   <div class="arrival-card">
@@ -53,3 +53,5 @@
     </div>
   </details>
 </section>
+
+<%- include('parking-options') %>

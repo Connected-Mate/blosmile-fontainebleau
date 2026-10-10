@@ -1,7 +1,10 @@
 import { getDirections } from './directions.mjs';
+import { journalFor } from './editorial.mjs';
 // Keep displayed facts and structured data based on the same editable values.
 export function presentation(raw){
   const content=structuredClone(raw),p=content.practice;
+  // Detailed education is the editable source; keep the older card summary in sync.
+  content.team.forEach(member=>{if(Array.isArray(member.education))member.qualifications=member.education.map(item=>item.title);});
   content.directions=getDirections(content);
   p.mapUrl=content.directions.mapUrl;
   p.phoneInternational=p.phone.replace(/[^+\d]/g,'').replace(/^0/,'+33');
@@ -18,5 +21,6 @@ export function presentation(raw){
   if(content.home.heroCaption)content.home.heroCaption=substitute(content.home.heroCaption);
   if(content.pages.contact.access)content.pages.contact.access=substitute(content.pages.contact.access);
   if(Array.isArray(content.pages.privacy?.sections))content.pages.privacy.sections=content.pages.privacy.sections.map(section=>({...section,paragraphs:section.paragraphs.map(substitute)}));
+  content.journal=journalFor(content);
   return content;
 }

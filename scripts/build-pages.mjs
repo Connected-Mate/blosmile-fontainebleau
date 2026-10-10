@@ -11,7 +11,7 @@ import { validateContent } from '../server/store.mjs';
 const root = path.resolve(import.meta.dirname, '..');
 const marker = '.blosmile-pages-build.json';
 const publicPages = {
-  '/': 'home', '/equipe': 'team', '/le-cabinet': 'cabinet', '/soins': 'services',
+  '/': 'home', '/equipe': 'team', '/formations': 'formations', '/le-cabinet': 'cabinet', '/soins': 'services',
   '/contact': 'contact', '/venir': 'directions', '/questions-frequentes': 'faq',
   '/mentions-legales': 'legal', '/confidentialite': 'privacy', '/conseils': 'resources'
 };

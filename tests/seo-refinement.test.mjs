@@ -11,7 +11,7 @@ const nodeOfType = (graph, type) => graph.find(node => node['@type'] === type);
 
 test('schema links each page to the site, dentist and canonical URL without duplicate FAQ entities', () => {
   const content = presentation(production());
-  for (const [page, type, path] of [['team', 'AboutPage', '/equipe'], ['contact', 'ContactPage', '/contact'], ['directions', 'ContactPage', '/venir'], ['services', 'CollectionPage', '/soins'], ['faq', 'FAQPage', '/questions-frequentes']]) {
+  for (const [page, type, path] of [['team', 'AboutPage', '/equipe'], ['formations', 'AboutPage', '/formations'], ['contact', 'ContactPage', '/contact'], ['directions', 'ContactPage', '/venir'], ['services', 'CollectionPage', '/soins'], ['faq', 'FAQPage', '/questions-frequentes']]) {
     const graph = graphFor(content, page);
     const webPage = nodeOfType(graph, type);
     assert.equal(webPage.url, `https://cabinet.example.org${path}`);
@@ -59,7 +59,7 @@ test('structured local facts use the current address, phone, map and explicit cl
 
 test('every indexable page has a distinct title, description and canonical, including directions', () => {
   const content = production();
-  const pages = ['home', 'team', 'cabinet', 'services', 'contact', 'directions', 'faq', 'resources'].map(page => makeSeo(content, page));
+  const pages = ['home', 'team', 'formations', 'cabinet', 'services', 'contact', 'directions', 'faq', 'resources'].map(page => makeSeo(content, page));
   pages.push(...content.services.map(service => makeSeo(content, 'service', service)));
   pages.push(...content.articles.map(article => makeSeo(content, 'article', undefined, article)));
   for (const field of ['title', 'description', 'canonical']) {
@@ -71,6 +71,7 @@ test('every indexable page has a distinct title, description and canonical, incl
 
 test('sitemap excludes nonindexable pages and emits only validated page-specific modification dates', () => {
   const content = production();
+  for (const article of content.articles) delete article.updatedAt;
   const unchanged = sitemap(content, '2026-10-10T00:00:00Z');
   assert.doesNotMatch(unchanged, /<lastmod>/);
   assert.match(unchanged, /<loc>https:\/\/cabinet\.example\.org\/venir<\/loc>/);

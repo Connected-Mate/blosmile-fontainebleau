@@ -1,0 +1,46 @@
+/* Parking choices stay usable as ordinary links without JavaScript. */
+.parking-section{padding-block:65px 85px;border-top:1px solid var(--line)}
+.parking-heading{display:grid;grid-template-columns:1.15fr 1fr;align-items:end;gap:45px;margin-bottom:35px}
+.parking-heading .eyebrow{margin-bottom:16px}
+.parking-heading h2{font-size:clamp(40px,4vw,58px)}
+.parking-heading>p{font-size:13px;line-height:1.9;max-width:440px;padding-bottom:4px}
+.parking-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid #ccd6d4;background:#fafaf6}
+.parking-card{display:flex;flex-direction:column;min-width:0;padding:30px clamp(20px,2.4vw,35px)}
+.parking-card+.parking-card{border-left:1px solid #ccd6d4}
+.parking-card-top{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:27px}
+.parking-mark{display:flex;align-items:center;justify-content:center;width:38px;height:38px;flex:0 0 38px;border:1px solid #a9bec0;color:var(--navy);border-radius:50%;font-size:17px;font-weight:500;line-height:1}
+.parking-type{font-size:10px;line-height:1.6;color:#526773;text-align:right}
+.parking-card h3{font-size:34px;line-height:1.12;margin-bottom:17px}
+.parking-address{display:flex;align-items:flex-start;gap:9px;font-size:12px;line-height:1.8;min-height:48px;color:var(--navy)}
+.parking-address>.icon{width:16px;height:16px;margin-top:3px;flex-shrink:0}
+.parking-address>span{overflow-wrap:anywhere}
+a.parking-address:hover>span{text-decoration:underline;text-underline-offset:4px}
+.parking-description{font-size:12px;line-height:1.9;margin-top:16px;margin-bottom:26px}
+.parking-actions{display:grid;gap:9px;margin-top:auto;padding-top:6px}
+.parking-action{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:46px;padding:12px 14px;font-size:11px;font-weight:600;line-height:1.6;transition:background .2s,border-color .2s}
+.parking-action>.icon{width:17px;height:17px}
+.parking-action-primary{background:var(--navy);color:var(--cream);border:1px solid var(--navy)}
+.parking-action-walking{border:1px solid #b6c6c8;color:var(--navy)}
+.parking-bottom{display:grid;grid-template-columns:1.5fr 1fr;gap:45px;align-items:start;padding-top:28px}
+.parking-access-note{display:flex;align-items:flex-start;gap:16px}
+.parking-access-icon{display:flex;justify-content:center;align-items:center;flex:0 0 36px;min-height:36px;background:var(--sand);color:var(--navy)}
+.parking-access-icon>.icon{width:16px;height:16px}
+.parking-access-note h3{font-family:var(--sans);font-size:12px;font-weight:600;line-height:1.7;letter-spacing:0;margin-bottom:6px}
+.parking-access-note p{font-size:11px;line-height:1.9;max-width:530px}
+.parking-access-note a{display:inline-block;color:var(--navy);text-decoration:underline;text-underline-offset:3px;padding-block:4px}
+.parking-sources{border-block:1px solid #ccd6d4;padding-inline:15px}
+.parking-sources>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;list-style:none;cursor:pointer;min-height:46px;font-size:11px;font-weight:600;color:var(--navy)}
+.parking-sources>summary::-webkit-details-marker{display:none}
+.parking-sources>summary>.icon{width:16px;height:16px;transition:transform .2s}
+.parking-sources[open]>summary>.icon{transform:rotate(45deg)}
+.parking-sources>p{font-size:11px;line-height:1.8;padding-block:4px 9px}
+.parking-sources ul{margin:0 0 10px}
+.parking-sources li+li{border-top:1px solid var(--line)}
+.parking-sources li>a{display:flex;align-items:center;justify-content:space-between;gap:15px;min-height:48px;padding-block:9px;font-size:11px;line-height:1.7;color:var(--navy)}
+.parking-sources li>a small{display:block;font-size:10px;color:#526773}
+.parking-sources li>a>.icon{width:15px;height:15px}
+@media(hover:hover) and (pointer:fine){.parking-action-primary:hover{background:#234c6b;border-color:#234c6b}.parking-action-walking:hover{background:#edf2ef;border-color:#708c91}.parking-sources li>a:hover{text-decoration:underline;text-underline-offset:3px}}
+@media(max-width:900px){.parking-heading{gap:25px}.parking-grid{grid-template-columns:1fr}.parking-card{padding:27px}.parking-card+.parking-card{border-left:0;border-top:1px solid #ccd6d4}.parking-card-top{margin-bottom:18px}.parking-address{min-height:0}.parking-description{max-width:560px;margin-block:13px 18px}.parking-actions{grid-template-columns:1fr 1fr}.parking-bottom{grid-template-columns:1fr;gap:24px}.parking-sources{max-width:520px;width:100%}}
+@media(max-width:600px){.parking-section{padding-block:45px 55px}.parking-heading{grid-template-columns:1fr;gap:19px;margin-bottom:26px}.parking-heading>p{font-size:12px}.parking-heading h2{font-size:43px}.parking-heading .eyebrow{font-size:9px}.parking-card{padding:24px 21px}.parking-card h3{font-size:33px}.parking-actions{grid-template-columns:1fr}.parking-action{min-height:48px}.parking-bottom{padding-top:24px}.parking-access-note{gap:12px}.parking-access-note p{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.parking-action,.parking-sources>summary>.icon{transition:none}}
+@media print{.parking-section{padding-block:25px}.parking-card{break-inside:avoid}.parking-actions,.parking-sources{display:none}.parking-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.parking-card+.parking-card{border-top:0;border-left:1px solid #ccd6d4}.parking-card{padding:16px}}

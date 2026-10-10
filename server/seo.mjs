@@ -2,6 +2,7 @@ import { getDirections } from './directions.mjs';
 
 const definitions = {
   home: { path: '/', title: 'Blosmile — Cabinet dentaire à Fontainebleau', description: 'Découvrez Blosmile, votre cabinet dentaire à Fontainebleau : équipe, soins dentaires, informations pratiques et prise de rendez-vous.' },
+  formations: { path: '/formations', title: 'Parcours et formations des dentistes à Fontainebleau | Blosmile', description: 'Les cursus universitaires et formations publiés par les chirurgiens-dentistes Blosmile à Fontainebleau, avec les liens vers les établissements.' },
   team: { path: '/equipe', title: 'Notre équipe de chirurgiens-dentistes à Fontainebleau | Blosmile', description: 'Rencontrez les praticiens et l’équipe du cabinet dentaire Blosmile à Fontainebleau.' },
   cabinet: { path: '/le-cabinet', title: 'Le cabinet dentaire à Fontainebleau | Blosmile', description: 'Découvrez le cabinet dentaire Blosmile à Fontainebleau, ses espaces et son approche des soins.' },
   services: { path: '/soins', title: 'Les soins dentaires à Fontainebleau | Blosmile', description: 'Informations sur les soins proposés au cabinet dentaire Blosmile à Fontainebleau et leur déroulement.' },
@@ -115,7 +116,7 @@ export function makeSeo(content, page, service, article) {
     graph.push({ '@type': 'WebSite', '@id': `${siteUrl}/#website`, url: `${siteUrl}/`, name: textValue(content.seo?.siteName) || practice.name || 'Blosmile', inLanguage: 'fr-FR', publisher: { '@id': `${siteUrl}/#cabinet` } });
   }
   if (page !== 'notfound') {
-    const types = { team: 'AboutPage', cabinet: 'AboutPage', contact: 'ContactPage', directions: 'ContactPage', services: 'CollectionPage', resources: 'CollectionPage', faq: 'FAQPage' };
+    const types = { formations: 'AboutPage', team: 'AboutPage', cabinet: 'AboutPage', contact: 'ContactPage', directions: 'ContactPage', services: 'CollectionPage', resources: 'CollectionPage', faq: 'FAQPage' };
     graph.push({
       '@type': types[page] || 'WebPage', name: title, description, inLanguage: 'fr-FR',
       ...(siteUrl ? {

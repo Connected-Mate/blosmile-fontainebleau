@@ -1,0 +1,16 @@
+<% const journal=content.journal, copy=content.pages.resources || {}; %>
+<section class="page-intro wrap journal-intro"><p class="eyebrow">LE CARNET BLOSMILE · FONTAINEBLEAU</p><h1><%= copy.title || 'Des réponses claires.' %><br><em><%= copy.accent || 'Pour votre sourire.' %></em></h1><p><%= copy.description || 'Comprendre un traitement, préparer une consultation, prendre soin de ses dents : des repères pour échanger avec votre chirurgien-dentiste à Fontainebleau.' %></p></section>
+<section class="wrap journal-library" aria-label="Le blog et les conseils dentaires" data-journal>
+  <div class="journal-controls" data-journal-controls hidden>
+    <div class="journal-search"><label for="journal-search">Quelle est votre question ?</label><input type="search" id="journal-search" data-journal-search placeholder="Implant, gencives, douleur…" autocomplete="off"><button type="button" data-journal-reset>Tout afficher</button></div>
+    <div class="journal-filters" aria-label="Filtrer par thème"><button type="button" data-category-filter="all" aria-pressed="true">Tous les conseils</button><% journal.categories.forEach(category=>{ %><button type="button" data-category-filter="<%= category.id %>" aria-pressed="false"><%= category.title %></button><% }) %></div>
+    <p class="journal-count" role="status" aria-live="polite" data-journal-count><%= journal.articles.length %> conseils à découvrir</p>
+  </div>
+  <nav class="journal-topic-links" data-journal-fallback aria-label="Accéder à un thème"><% journal.categories.forEach(category=>{ %><a href="#theme-<%= category.id %>"><%= category.title %></a><% }) %></nav>
+  <% journal.categories.forEach(category=>{ const articles=journal.articles.filter(article=>article.category===category.id); %>
+  <section class="journal-group" id="theme-<%= category.id %>" data-journal-group aria-labelledby="title-<%= category.id %>"><div class="journal-group-heading"><h2 id="title-<%= category.id %>"><%= category.title %></h2><% if(content.services.some(service=>service.slug===category.id)){ %><a class="text-link" href="/soins/<%= category.id %>">Le soin au cabinet <%- include('icon',{name:'arrow'}) %></a><% } %></div><div class="journal-grid"><% articles.forEach(item=>{ %><%- include('journal-card',{item}) %><% }) %></div></section>
+  <% }) %>
+  <div class="journal-empty" data-journal-empty hidden><h2>Essayons autrement.</h2><p>Aucun conseil ne correspond à cette recherche. Essayez un mot plus simple ou affichez tous les thèmes.</p><a class="text-link" href="/contact">Poser une question au cabinet <%- include('icon',{name:'arrow'}) %></a></div>
+  <p class="journal-disclaimer">Ces contenus vous aident à préparer votre consultation. Ils ne permettent pas de poser un diagnostic ni de choisir seul un traitement.</p>
+</section>
+<%- include('contact-block') %>

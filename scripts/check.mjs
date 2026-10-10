@@ -7,7 +7,7 @@ import { validateContent } from '../server/store.mjs';
 const root=path.resolve(import.meta.dirname,'..');
 const content=presentation(JSON.parse(fs.readFileSync(path.join(root,'data/content.json'),'utf8')));
 const errors=validateContent(content);if(errors.length)throw new Error(errors.join('\n'));
-const pages=['home','team','cabinet','services','contact','directions','faq','legal','privacy','resources','notfound'].map(page=>({page,service:null,article:null}));
+const pages=['home','formations','team','cabinet','services','contact','directions','faq','legal','privacy','resources','notfound'].map(page=>({page,service:null,article:null}));
 for(const service of content.services)pages.push({page:'service',service,article:null});
 for(const article of content.articles||[])pages.push({page:'article',article,service:null});
 const missing=new Set();let count=0;

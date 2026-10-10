@@ -202,6 +202,20 @@ export function validateContent(content) {
   }
   const articleSlugs = new Set();
   if (content.articles !== undefined && !Array.isArray(content.articles)) errors.push('La section « articles » doit être une liste.');
+  const checkLinks = (items, path) => {
+    if (!Array.isArray(items) || items.some(item => !item || typeof item.title !== 'string' || typeof item.url !== 'string')) errors.push(`${path} : une liste de liens avec titre et URL est requise.`);
+  };
+  for (const person of Array.isArray(content.team) ? content.team : []) {
+    if (!person || typeof person !== 'object') continue;
+    if (person.education !== undefined) {
+      if (!Array.isArray(person.education)) errors.push('Les formations doivent être une liste.');
+      else person.education.forEach(item => {
+        if (!item || typeof item.title !== 'string') errors.push('Chaque formation doit avoir un intitulé.');
+        if (item?.links !== undefined) checkLinks(item.links, 'Liens de formation');
+      });
+    }
+    if (person.institutionLinks !== undefined) checkLinks(person.institutionLinks, 'Établissements de formation');
+  }
   for (const article of Array.isArray(content.articles) ? content.articles : []) {
     if (!article || typeof article !== 'object') continue;
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(article.slug || '')) errors.push('Chaque article doit posséder un identifiant « slug » en minuscules, chiffres et tirets.');
@@ -209,6 +223,21 @@ export function validateContent(content) {
     articleSlugs.add(article.slug);
     if (typeof article.title !== 'string' || !article.title.trim()) errors.push(`Article ${article.slug || ''} : un titre est requis.`);
     if (!Array.isArray(article.paragraphs) || article.paragraphs.some(value => typeof value !== 'string')) errors.push(`Article ${article.slug || ''} : les paragraphes doivent être une liste de textes.`);
+    if (article.sections !== undefined) {
+      if (!Array.isArray(article.sections)) errors.push('Les parties du conseil doivent être une liste.');
+      else {
+        const ids = new Set();
+        for (const section of article.sections) {
+          if (!section || typeof section.title !== 'string' || !/^[a-z0-9-]+$/.test(section.id || '') || ids.has(section.id)) errors.push('Chaque partie de conseil doit avoir un titre et un identifiant unique.');
+          if (section?.id) ids.add(section.id);
+          checkTextArray(section?.paragraphs, 'Paragraphes de la partie');
+        }
+      }
+    }
+    if (article.consultationQuestions !== undefined) checkTextArray(article.consultationQuestions, 'Questions de consultation');
+    if (article.questions !== undefined && (!Array.isArray(article.questions) || article.questions.some(item => !item || typeof item.question !== 'string' || typeof item.answer !== 'string'))) errors.push('Les questions du conseil doivent contenir une question et une réponse.');
+    if (article.sources !== undefined) checkLinks(article.sources, 'Sources du conseil');
+    if (article.localContext !== undefined && typeof article.localContext !== 'string') errors.push('Le contexte local doit être un texte.');
   }
   return [...new Set(errors)].slice(0, 20);
 }

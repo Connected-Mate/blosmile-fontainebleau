@@ -134,9 +134,9 @@
     "eyebrow": "CABINETS DENTAIRES · FONTAINEBLEAU",
     "title": "Votre sourire,",
     "titleAccent": "notre attention.",
-    "description": "Au cœur de Fontainebleau, une équipe à votre écoute et des soins pensés pour vous. Prenons soin de votre sourire, ensemble.",
-    "heroImage": "/assets/cabinet-facade-fontainebleau.jpeg",
-    "heroAlt": "Façade en briques et pierre des cabinets dentaires Blosmile, rue Grande à Fontainebleau",
+    "description": "À Fontainebleau, des parcours de formation complémentaires, une équipe à votre écoute et un lieu de soins lumineux. Un bilan, des explications, puis un parcours pensé avec vous.",
+    "heroImage": "/assets/cabinet-soins.jpeg",
+    "heroAlt": "Un espace de soins lumineux du cabinet Blosmile à Fontainebleau, équipé d’un fauteuil et d’un microscope",
     "heroCaption": "{{address}} · {{city}}",
     "introductionEyebrow": "BIENVENUE CHEZ BLOSMILE",
     "introductionTitle": "De l’écoute, de la précision.",
@@ -147,11 +147,11 @@
     "servicesText": "Des compétences complémentaires, réunies au même endroit pour vous accompagner à chaque étape.",
     "teamTitle": "Des visages, des liens,",
     "teamAccent": "une équipe.",
-    "teamText": "Faites connaissance avec les praticiens qui vous accompagnent. Des parcours et des compétences complémentaires, une même attention portée à vous.",
+    "teamText": "Découvrez nos praticiens, leurs domaines d’activité et les formations qui composent leurs parcours. Une équipe réunie à Fontainebleau pour vous accompagner.",
     "cabinetTitle": "Une adresse à Fontainebleau.",
     "cabinetAccent": "Un lieu pour prendre soin de vous.",
     "cabinetText": "Derrière la façade de briques de la rue Grande, découvrez des espaces de soins lumineux, une équipe accueillante et des équipements dédiés à votre prise en charge.",
-    "cabinetImage": "/assets/cabinet-soins.jpeg",
+    "cabinetImage": "/assets/cabinet-accueil.jpeg",
     "cabinetSecondImage": "/assets/cabinet-salle-attente.jpeg",
     "faqTitle": "Vos questions méritent",
     "faqAccent": "des réponses claires.",
@@ -168,7 +168,9 @@
         "title": "On vous accompagne",
         "text": "Votre parcours de soins et votre suivi se construisent avec vous, étape par étape."
       }
-    ]
+    ],
+    "arrivalImage": "/assets/cabinet-facade-fontainebleau.jpeg",
+    "cabinetAlt": "L’accueil lumineux des cabinets dentaires Blosmile à Fontainebleau"
   },
   "team": [
     {
@@ -178,12 +180,28 @@
       "focus": "Esthétique · Implantologie",
       "qualifications": [
         "Diplômée de la Faculté de chirurgie dentaire de Paris",
-        "DU clinique d’implantologie chirurgicale et prothétique, Université Paris 7, 2014"
+        "DU clinique d’implantologie chirurgicale et prothétique — Université Paris 7, 2014"
       ],
       "imageSource": "https://files.sbcdnsb.com/images/kTW2a0Ys9PVjVG6FS3BaSw/content/1790064821/11863203/800/18da15129e9979a508b920260922-4002218-7vm21.jpeg",
       "kind": "dentist",
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/l-equipe",
-      "image": "/assets/dr-marie-charlotte-russon.jpeg"
+      "image": "/assets/dr-marie-charlotte-russon.jpeg",
+      "education": [
+        {
+          "title": "Diplômée de la Faculté de chirurgie dentaire de Paris",
+          "links": []
+        },
+        {
+          "title": "DU clinique d’implantologie chirurgicale et prothétique — Université Paris 7, 2014",
+          "links": [
+            {
+              "title": "Découvrir la formation universitaire",
+              "url": "https://odf.u-paris.fr/fr/offre-de-formation/diplome-d-universite-du-diu-1/sciences-technologies-sante-STS/du-clinique-d-implantologie-chirurgicale-et-prothetique-KFGS3KNW.html"
+            }
+          ]
+        }
+      ],
+      "institutionLinks": []
     },
     {
       "id": "jean-francois-russon",
@@ -201,7 +219,14 @@
         "generationImplant": "Présenté comme l’un des fondateurs et formateurs de Génération Implant",
         "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/implantologie"
       },
-      "image": "/assets/dr-jean-francois-russon.jpeg"
+      "image": "/assets/dr-jean-francois-russon.jpeg",
+      "education": [
+        {
+          "title": "Diplômé de la Faculté de chirurgie dentaire de Paris",
+          "links": []
+        }
+      ],
+      "institutionLinks": []
     },
     {
       "id": "hugues-russon",
@@ -210,12 +235,33 @@
       "focus": "Endodontie · Implantologie",
       "qualifications": [
         "Diplômé de la Faculté de chirurgie dentaire Paris V",
-        "DU d’implantologie, Université d’Évry Val d’Essonne, 2015"
+        "DU d’implantologie — Université d’Évry Val d’Essonne, 2015"
       ],
       "imageSource": "https://files.sbcdnsb.com/images/kTW2a0Ys9PVjVG6FS3BaSw/content/1790064873/11863205/800/887aae7755f654ddeac520260922-3989935-yg2e3n.jpeg",
       "kind": "dentist",
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/l-equipe",
-      "image": "/assets/dr-hugues-russon.jpeg"
+      "image": "/assets/dr-hugues-russon.jpeg",
+      "education": [
+        {
+          "title": "Diplômé de la Faculté de chirurgie dentaire Paris V",
+          "links": [
+            {
+              "title": "Découvrir l’UFR d’odontologie actuelle",
+              "url": "https://u-paris.fr/odontologie/"
+            }
+          ]
+        },
+        {
+          "title": "DU d’implantologie — Université d’Évry Val d’Essonne, 2015",
+          "links": [
+            {
+              "title": "Découvrir le DU d’implantologie",
+              "url": "https://www.univ-evry.fr/formation/loffre-de-formation/domaines-de-formation/domaine/sciences-technologies-sante/formation/2026-2027/programme/implantologie.html"
+            }
+          ]
+        }
+      ],
+      "institutionLinks": []
     },
     {
       "id": "bertrand-dumaine",
@@ -225,13 +271,32 @@
       "qualifications": [
         "DU d’implantologie orale",
         "CES de parodontologie",
-        "CES de prothèse conjointe",
-        "Université Paris Descartes"
+        "CES de prothèse conjointe"
       ],
       "imageSource": "https://files.sbcdnsb.com/images/kTW2a0Ys9PVjVG6FS3BaSw/content/1790065002/11863217/800/18da15129e9979a508b920260922-4002218-7vm21.jpeg",
       "kind": "dentist",
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/l-equipe",
-      "image": "/assets/dr-bertrand-dumaine.jpeg"
+      "image": "/assets/dr-bertrand-dumaine.jpeg",
+      "education": [
+        {
+          "title": "DU d’implantologie orale",
+          "links": []
+        },
+        {
+          "title": "CES de parodontologie",
+          "links": []
+        },
+        {
+          "title": "CES de prothèse conjointe",
+          "links": []
+        }
+      ],
+      "institutionLinks": [
+        {
+          "title": "Université Paris Descartes — aujourd’hui Université Paris Cité",
+          "url": "https://u-paris.fr/odontologie/"
+        }
+      ]
     },
     {
       "id": "maximilien-ruhemann",
@@ -242,7 +307,9 @@
       "imageSource": "https://files.sbcdnsb.com/images/kTW2a0Ys9PVjVG6FS3BaSw/content/1790065030/11863218/800/18da15129e9979a508b920260922-4002218-7vm21.jpeg",
       "kind": "dentist",
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/l-equipe",
-      "image": "/assets/dr-maximilien-ruhemann.jpeg"
+      "image": "/assets/dr-maximilien-ruhemann.jpeg",
+      "education": [],
+      "institutionLinks": []
     },
     {
       "id": "victor-becquet",
@@ -251,13 +318,47 @@
       "focus": "Soins dentaires",
       "qualifications": [
         "Diplômé de la Universidad Alfonso X El Sabio",
-        "Formation en parodontologie : Académie de Paro – Parodontie Clinique",
-        "Formation en implantologie : SAPO Implant, International Courses for Oral Rehabilitation and Implantology"
+        "Formation en parodontologie — Académie de Paro, Parodontie clinique",
+        "Formation en implantologie — SAPO Implant ; International Courses for Oral Rehabilitation and Implantology"
       ],
       "imageSource": "https://files.sbcdnsb.com/images/kTW2a0Ys9PVjVG6FS3BaSw/content/1790065061/11863219/800/18da15129e9979a508b920260922-4002218-7vm21.jpeg",
       "kind": "dentist",
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/l-equipe",
-      "image": "/assets/dr-victor-becquet.jpeg"
+      "image": "/assets/dr-victor-becquet.jpeg",
+      "education": [
+        {
+          "title": "Diplômé de la Universidad Alfonso X El Sabio",
+          "links": [
+            {
+              "title": "Découvrir l’odontologie à l’université UAX",
+              "url": "https://www.uax.com/titulaciones/grado-en-odontologia"
+            }
+          ]
+        },
+        {
+          "title": "Formation en parodontologie — Académie de Paro, Parodontie clinique",
+          "links": [
+            {
+              "title": "Découvrir l’Académie de Paro",
+              "url": "https://www.academiedeparo.fr/"
+            }
+          ]
+        },
+        {
+          "title": "Formation en implantologie — SAPO Implant ; International Courses for Oral Rehabilitation and Implantology",
+          "links": [
+            {
+              "title": "Découvrir SAPO Implant",
+              "url": "https://www.sapoimplant.com/"
+            },
+            {
+              "title": "Découvrir ICORI",
+              "url": "https://icori.org/"
+            }
+          ]
+        }
+      ],
+      "institutionLinks": []
     },
     {
       "id": "sophie-trinh",
@@ -267,14 +368,52 @@
       "qualifications": [
         "Diplômée de la Faculté de chirurgie dentaire de Lille",
         "Ancienne interne des hôpitaux de Lille",
-        "CES de parodontologie, Paris",
-        "Formation en parodontologie : Parosphère Formation, Paris",
-        "Formation en dentisterie adhésive et esthétique : Groupe Raphael Formation (GRF), Paris"
+        "CES de parodontologie — Paris",
+        "Formation en parodontologie — ParoSphère Formation, Paris",
+        "Formation en dentisterie adhésive et esthétique — Groupe Raphaël Formation, Paris"
       ],
       "imageSource": "https://files.sbcdnsb.com/images/kTW2a0Ys9PVjVG6FS3BaSw/content/1790065152/11863257/800/18da15129e9979a508b920260922-4002218-7vm21.jpeg",
       "kind": "dentist",
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/l-equipe",
-      "image": "/assets/dr-sophie-trinh.jpeg"
+      "image": "/assets/dr-sophie-trinh.jpeg",
+      "education": [
+        {
+          "title": "Diplômée de la Faculté de chirurgie dentaire de Lille",
+          "links": [
+            {
+              "title": "Découvrir l’odontologie à Lille",
+              "url": "https://ufr3s.univ-lille.fr/odontologie/"
+            }
+          ]
+        },
+        {
+          "title": "Ancienne interne des hôpitaux de Lille",
+          "links": []
+        },
+        {
+          "title": "CES de parodontologie — Paris",
+          "links": []
+        },
+        {
+          "title": "Formation en parodontologie — ParoSphère Formation, Paris",
+          "links": [
+            {
+              "title": "Découvrir ParoSphère Formation",
+              "url": "https://www.parosphereformation.fr/"
+            }
+          ]
+        },
+        {
+          "title": "Formation en dentisterie adhésive et esthétique — Groupe Raphaël Formation, Paris",
+          "links": [
+            {
+              "title": "Découvrir le Groupe Raphaël Formation",
+              "url": "https://www.formationgrf.com/formateurs.php"
+            }
+          ]
+        }
+      ],
+      "institutionLinks": []
     },
     {
       "id": "valerie",
@@ -285,7 +424,9 @@
       "imageSource": "https://files.sbcdnsb.com/images/kTW2a0Ys9PVjVG6FS3BaSw/content/1790065498/11863406/800/18da15129e9979a508b920260922-4002218-7vm21.jpeg",
       "kind": "assistant",
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/l-equipe",
-      "image": "/assets/valerie.jpeg"
+      "image": "/assets/valerie.jpeg",
+      "education": [],
+      "institutionLinks": []
     },
     {
       "id": "charlene",
@@ -296,7 +437,9 @@
       "imageSource": "https://files.sbcdnsb.com/images/kTW2a0Ys9PVjVG6FS3BaSw/content/1790065532/11863409/800/0f96be281149f83ff18c20260922-4008347-g7glwt.jpeg",
       "kind": "assistant",
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/l-equipe",
-      "image": "/assets/charlene.jpeg"
+      "image": "/assets/charlene.jpeg",
+      "education": [],
+      "institutionLinks": []
     },
     {
       "id": "elena",
@@ -307,7 +450,9 @@
       "imageSource": "https://files.sbcdnsb.com/images/kTW2a0Ys9PVjVG6FS3BaSw/content/1790065550/11863412/800/887aae7755f654ddeac520260922-3989935-yg2e3n.jpeg",
       "kind": "assistant",
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/l-equipe",
-      "image": "/assets/elena.jpeg"
+      "image": "/assets/elena.jpeg",
+      "education": [],
+      "institutionLinks": []
     },
     {
       "id": "oana",
@@ -318,7 +463,9 @@
       "imageSource": "https://files.sbcdnsb.com/images/kTW2a0Ys9PVjVG6FS3BaSw/content/1790065575/11863415/800/18da15129e9979a508b920260922-4002218-7vm21.jpeg",
       "kind": "assistant",
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/l-equipe",
-      "image": "/assets/oana.jpeg"
+      "image": "/assets/oana.jpeg",
+      "education": [],
+      "institutionLinks": []
     },
     {
       "id": "mariana",
@@ -329,7 +476,9 @@
       "imageSource": "https://files.sbcdnsb.com/images/kTW2a0Ys9PVjVG6FS3BaSw/content/1790065593/11863418/800/18da15129e9979a508b920260922-4002218-7vm21.jpeg",
       "kind": "assistant",
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/l-equipe",
-      "image": "/assets/mariana.jpeg"
+      "image": "/assets/mariana.jpeg",
+      "education": [],
+      "institutionLinks": []
     },
     {
       "id": "helene",
@@ -340,7 +489,9 @@
       "imageSource": "https://files.sbcdnsb.com/images/kTW2a0Ys9PVjVG6FS3BaSw/content/1790065760/11863556/800/18da15129e9979a508b920260922-4002218-7vm21.jpeg",
       "kind": "reception",
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/l-equipe",
-      "image": "/assets/helene.jpeg"
+      "image": "/assets/helene.jpeg",
+      "education": [],
+      "institutionLinks": []
     },
     {
       "id": "nelia",
@@ -351,7 +502,9 @@
       "imageSource": "https://files.sbcdnsb.com/images/kTW2a0Ys9PVjVG6FS3BaSw/content/1790065744/11863557/800/0f96be281149f83ff18c20260922-4008347-g7glwt.jpeg",
       "kind": "reception",
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/l-equipe",
-      "image": "/assets/nelia.jpeg"
+      "image": "/assets/nelia.jpeg",
+      "education": [],
+      "institutionLinks": []
     },
     {
       "id": "nathalie",
@@ -362,7 +515,9 @@
       "imageSource": "https://files.sbcdnsb.com/images/kTW2a0Ys9PVjVG6FS3BaSw/content/1790065726/11863558/800/887aae7755f654ddeac520260922-3989935-yg2e3n.jpeg",
       "kind": "reception",
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/l-equipe",
-      "image": "/assets/nathalie.jpeg"
+      "image": "/assets/nathalie.jpeg",
+      "education": [],
+      "institutionLinks": []
     }
   ],
   "services": [
@@ -461,7 +616,12 @@
       "subtitle": "Retrouver le plaisir de sourire.",
       "intro": "Une dent absente peut changer votre quotidien. À Fontainebleau, l’équipe Blosmile vous accompagne dans l’étude d’une solution implantaire adaptée à votre santé bucco-dentaire.",
       "seoTitle": "Implantologie à {{city}} | Blosmile",
-      "seoDescription": "Remplacer une ou plusieurs dents absentes avec un projet implantaire adapté à votre situation. Découvrez les cabinets dentaires Blosmile, {{address}} à {{city}}."
+      "seoDescription": "Remplacer une ou plusieurs dents absentes avec un projet implantaire adapté à votre situation. Découvrez les cabinets dentaires Blosmile, {{address}} à {{city}}.",
+      "consultationQuestions": [
+        "Quelles alternatives à l’implant sont possibles pour ma dent ?",
+        "Quelles étapes faut-il prévoir entre le bilan, la chirurgie et la prothèse ?",
+        "Quels contrôles et quels gestes d’entretien seront utiles ?"
+      ]
     },
     {
       "id": "esthetique",
@@ -516,7 +676,12 @@
       "subtitle": "Un sourire qui vous ressemble.",
       "intro": "La teinte, la forme ou l’alignement de vos dents vous préoccupent ? Nous prenons le temps de comprendre vos attentes avant d’envisager les solutions possibles.",
       "seoTitle": "Esthétique du sourire à {{city}} | Blosmile",
-      "seoDescription": "Explorer des solutions pour la teinte, la forme et l’alignement des dents, après un bilan dentaire. Découvrez les cabinets dentaires Blosmile, {{address}} à {{city}}."
+      "seoDescription": "Explorer des solutions pour la teinte, la forme et l’alignement des dents, après un bilan dentaire. Découvrez les cabinets dentaires Blosmile, {{address}} à {{city}}.",
+      "consultationQuestions": [
+        "Quelle option répond à ma demande tout en tenant compte de la santé de mes dents ?",
+        "Quelles limites et quelles contraintes présente le traitement envisagé ?",
+        "Quel entretien et quel suivi faut-il prévoir ?"
+      ]
     },
     {
       "id": "endodontie",
@@ -540,14 +705,28 @@
       "additionalSourceUrls": [
         "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/"
       ],
-      "educationalLinks": [],
+      "educationalLinks": [
+        {
+          "title": "Dévitalisation à Fontainebleau : comprendre le traitement canalaire",
+          "url": "/conseils/devitalisation-traitement-canalaire-fontainebleau"
+        },
+        {
+          "title": "Douleur dentaire à Fontainebleau : quand consulter ?",
+          "url": "/conseils/douleur-dentaire-quand-consulter-fontainebleau"
+        }
+      ],
       "slug": "endodontie",
       "icon": "root",
       "image": "/assets/endodontie.jpeg",
       "subtitle": "Prendre soin de la dent, en profondeur.",
       "intro": "L’endodontie s’intéresse à l’intérieur de la dent. L’objectif d’un traitement est de prendre en charge la pulpe et les canaux lorsque la situation clinique le nécessite.",
       "seoTitle": "Endodontie à {{city}} | Blosmile",
-      "seoDescription": "Prendre en charge les tissus internes de la dent et ses canaux pour chercher à conserver la dent. Découvrez les cabinets dentaires Blosmile, {{address}} à {{city}}."
+      "seoDescription": "Prendre en charge les tissus internes de la dent et ses canaux pour chercher à conserver la dent. Découvrez les cabinets dentaires Blosmile, {{address}} à {{city}}.",
+      "consultationQuestions": [
+        "Qu’a montré le bilan de la dent concernée ?",
+        "Pourquoi un traitement ou un retraitement est-il proposé ?",
+        "Comment la dent sera-t-elle restaurée et contrôlée ensuite ?"
+      ]
     },
     {
       "id": "parodontologie",
@@ -573,14 +752,28 @@
         "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/notre-clinique",
         "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/"
       ],
-      "educationalLinks": [],
+      "educationalLinks": [
+        {
+          "title": "Gencives qui saignent : quand consulter à Fontainebleau ?",
+          "url": "/conseils/gencives-qui-saignent-fontainebleau"
+        },
+        {
+          "title": "Détartrage ou surfaçage : comprendre vos soins à Fontainebleau",
+          "url": "/conseils/detartrage-surfacage-difference-fontainebleau"
+        }
+      ],
       "slug": "parodontologie",
       "icon": "leaf",
       "image": "/assets/laser.jpeg",
       "subtitle": "Des gencives saines, un sourire durable.",
       "intro": "Les gencives et l’os qui entourent les dents participent à leur stabilité. La parodontologie s’attache à leur santé et à leur suivi.",
       "seoTitle": "Parodontologie à {{city}} | Blosmile",
-      "seoDescription": "Évaluer et traiter les gencives et les tissus qui soutiennent les dents. Découvrez les cabinets dentaires Blosmile, {{address}} à {{city}}."
+      "seoDescription": "Évaluer et traiter les gencives et les tissus qui soutiennent les dents. Découvrez les cabinets dentaires Blosmile, {{address}} à {{city}}.",
+      "consultationQuestions": [
+        "Qu’a montré l’examen de mes gencives ?",
+        "Quels soins et quels gestes quotidiens sont adaptés à ma situation ?",
+        "Comment vérifierons-nous l’évolution après les soins ?"
+      ]
     }
   ],
   "faq": [
@@ -708,7 +901,75 @@
     "directions": {
       "title": "Le chemin vers",
       "accent": "votre cabinet.",
-      "description": "Retrouvez notre adresse, choisissez votre application et préparez votre venue en quelques instants."
+      "description": "Retrouvez notre adresse, choisissez votre application et préparez votre venue en quelques instants.",
+      "parking": [
+        {
+          "id": "damesme",
+          "name": "Parking Damesme",
+          "address": "Place Georges Clemenceau, 77300 Fontainebleau",
+          "type": "Parking en surface",
+          "paid": true,
+          "walkingMinutes": null,
+          "summary": "Un parking en surface, place Georges Clemenceau. Ouvrez l’itinéraire piéton pour rejoindre le cabinet au 192 Rue Grande.",
+          "sourceName": "Fontainebleau Tourisme",
+          "sourceUrl": "https://www.fontainebleau-tourisme.com/fr/preparer-son-sejour/infos-pratiques/venir-au-pays-de-fontainebleau-train-voiture-velo/acces-plans-transport-parking/",
+          "sourceFacts": "Le site officiel de l’office de tourisme référence Damesme, place Georges Clemenceau, parmi les parkings payants.",
+          "openingHours": "Tous les jours, 24 h/24",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Parking+Damesme%2C+Place+Georges+Clemenceau%2C+77300+Fontainebleau",
+          "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Parking+Damesme%2C+Place+Georges+Clemenceau%2C+77300+Fontainebleau&travelmode=driving",
+          "walkingUrl": "https://www.google.com/maps/dir/?api=1&origin=Parking+Damesme%2C+Place+Georges+Clemenceau%2C+77300+Fontainebleau&destination=192+Rue+Grande%2C+77300+Fontainebleau%2C+France&destination_place_id=ChIJ1eahBGH05UcRn10bSWzIWXI&travelmode=walking"
+        },
+        {
+          "id": "etape",
+          "name": "Parking Étape",
+          "address": "44 rue du Château, 77300 Fontainebleau",
+          "type": "Parking couvert",
+          "paid": true,
+          "walkingMinutes": null,
+          "summary": "Une solution couverte rue du Château. Consultez les conditions de stationnement chez l’opérateur et lancez votre trajet à pied jusqu’au cabinet.",
+          "sourceName": "Interparking",
+          "sourceUrl": "https://www.interparking.fr/fr/parkings/fontainebleau/etape/",
+          "sourceFacts": "L’opérateur indique l’adresse au 44 rue du Château, une ouverture 24 h/24 et des emplacements PMR. Aucun temps de marche vers Blosmile n’est fourni.",
+          "openingHours": "Tous les jours, 24 h/24",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Parking+%C3%89tape%2C+44+rue+du+Ch%C3%A2teau%2C+77300+Fontainebleau",
+          "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Parking+%C3%89tape%2C+44+rue+du+Ch%C3%A2teau%2C+77300+Fontainebleau&travelmode=driving",
+          "walkingUrl": "https://www.google.com/maps/dir/?api=1&origin=Parking+%C3%89tape%2C+44+rue+du+Ch%C3%A2teau%2C+77300+Fontainebleau&destination=192+Rue+Grande%2C+77300+Fontainebleau%2C+France&destination_place_id=ChIJ1eahBGH05UcRn10bSWzIWXI&travelmode=walking"
+        },
+        {
+          "id": "marche",
+          "name": "Parking Marché",
+          "address": "2 place de la République, 77300 Fontainebleau",
+          "type": "Parking couvert",
+          "paid": true,
+          "walkingMinutes": null,
+          "summary": "Sous la place de la République, ce parking permet de prolonger votre venue dans le centre de Fontainebleau. Retrouvez les tarifs à jour chez l’opérateur.",
+          "sourceName": "Interparking",
+          "sourceUrl": "https://www.interparking.fr/fr/parkings/fontainebleau/marche/",
+          "sourceFacts": "L’opérateur confirme l’adresse au 2 place de la République, le stationnement couvert et l’ouverture 24 h/24.",
+          "openingHours": "Tous les jours, 24 h/24",
+          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Parking+March%C3%A9%2C+2+place+de+la+R%C3%A9publique%2C+77300+Fontainebleau",
+          "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Parking+March%C3%A9%2C+2+place+de+la+R%C3%A9publique%2C+77300+Fontainebleau&travelmode=driving",
+          "walkingUrl": "https://www.google.com/maps/dir/?api=1&origin=Parking+March%C3%A9%2C+2+place+de+la+R%C3%A9publique%2C+77300+Fontainebleau&destination=192+Rue+Grande%2C+77300+Fontainebleau%2C+France&destination_place_id=ChIJ1eahBGH05UcRn10bSWzIWXI&travelmode=walking"
+        }
+      ],
+      "parkingNote": "Trois repères pour préparer votre venue au 192 Rue Grande. Consultez les conditions du parking et lancez le trajet à pied jusqu’au cabinet avant de partir.",
+      "accessNote": "Vous avez des besoins particuliers pour accéder au cabinet ? Appelez le secrétariat avant votre visite pour préparer votre accueil."
+    },
+    "resources": {
+      "title": "Des réponses claires.",
+      "accent": "Pour votre sourire.",
+      "description": "Implants, gencives, soins de la dent ou esthétique : parcourez nos conseils pour comprendre vos options et préparer votre consultation chez Blosmile à Fontainebleau.",
+      "featuredSlugs": [
+        "gencives-qui-saignent-fontainebleau",
+        "devitalisation-traitement-canalaire-fontainebleau",
+        "les-implants-questions-reponses"
+      ]
+    },
+    "formations": {
+      "title": "Des parcours complémentaires.",
+      "accent": "Une attention commune.",
+      "description": "Les diplômes et formations des chirurgiens-dentistes Blosmile, réunis pour vous aider à connaître l’équipe qui vous accueille à Fontainebleau.",
+      "note": "Les parcours sont présentés d’après les informations publiées par le cabinet. Les liens donnent accès aux établissements et organismes cités, parfois sous leur nom actuel ; les intitulés historiques des diplômes sont conservés."
     }
   },
   "legal": {
@@ -735,7 +996,7 @@
     "indexable": false,
     "title": "Dentiste à {{city}} | Cabinets dentaires Blosmile",
     "description": "Découvrez Blosmile à {{city}} : 7 chirurgiens-dentistes, implantologie, esthétique, endodontie et parodontologie. {{address}}. RDV : 01 64 22 23 03.",
-    "ogImage": "/assets/cabinet-facade-fontainebleau.jpeg",
+    "ogImage": "/assets/cabinet-accueil.jpeg",
     "siteName": "Blosmile · Dentistes à Fontainebleau",
     "pages": {
       "team": {
@@ -759,8 +1020,8 @@
         "description": "Les réponses aux questions pratiques sur les rendez-vous, les soins et votre venue au cabinet Blosmile à {{city}}."
       },
       "resources": {
-        "title": "Conseils dentaires et informations sur les soins | Blosmile {{city}}",
-        "description": "Des informations générales sur les soins dentaires pour préparer vos échanges avec les chirurgiens-dentistes Blosmile à {{city}}."
+        "title": "Blog et conseils dentaires à Fontainebleau | Blosmile",
+        "description": "Implants, gencives, dévitalisation et esthétique : des explications et des repères pour préparer vos soins dentaires au cabinet Blosmile à Fontainebleau."
       },
       "legal": {
         "title": "Mentions légales | Blosmile",
@@ -769,6 +1030,10 @@
       "privacy": {
         "title": "Protection de vos données | Blosmile",
         "description": "Informations sur la protection des données et la confidentialité du site du cabinet dentaire Blosmile."
+      },
+      "formations": {
+        "title": "Parcours et formations des dentistes à Fontainebleau | Blosmile",
+        "description": "Découvrez les cursus et formations publiés des chirurgiens-dentistes Blosmile à Fontainebleau : universités, odontologie et formation continue."
       }
     }
   },
@@ -790,7 +1055,14 @@
       ],
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/implantologie-dentaire-la-technique-flapless",
       "sourceDate": "2026-10-10",
-      "image": "/assets/implantologie-dentaire-la-technique-flapless.jpeg"
+      "image": "/assets/implantologie-dentaire-la-technique-flapless.jpeg",
+      "seoTitle": "Implantologie dentaire : la technique flapless | Blosmile Fontainebleau",
+      "seoDescription": "Comprendre cette approche implantaire et les conditions qui orientent son choix. Repères pour préparer votre consultation à Fontainebleau.",
+      "sections": [],
+      "questions": [],
+      "consultationQuestions": [],
+      "sources": [],
+      "localContext": ""
     },
     {
       "slug": "la-greffe-osseuse-intra-sinusienne-ou-sinus-lift",
@@ -804,7 +1076,14 @@
       ],
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/la-greffe-osseuse-intra-sinusienne-ou-sinus-lift",
       "sourceDate": "2026-10-10",
-      "image": "/assets/la-greffe-osseuse-intra-sinusienne-ou-sinus-lift.jpeg"
+      "image": "/assets/la-greffe-osseuse-intra-sinusienne-ou-sinus-lift.jpeg",
+      "seoTitle": "La greffe osseuse intra sinusienne ou sinus lift | Blosmile Fontainebleau",
+      "seoDescription": "Le rôle du sinus lift dans certains projets de remplacement des dents supérieures. Repères pour préparer votre consultation à Fontainebleau.",
+      "sections": [],
+      "questions": [],
+      "consultationQuestions": [],
+      "sources": [],
+      "localContext": ""
     },
     {
       "slug": "douleur-et-implants-dentaires",
@@ -818,7 +1097,14 @@
       ],
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/douleur-et-implants-dentaires",
       "sourceDate": "2026-10-10",
-      "image": "/assets/douleur-et-implants-dentaires.jpeg"
+      "image": "/assets/douleur-et-implants-dentaires.jpeg",
+      "seoTitle": "Douleur et implants dentaires | Blosmile Fontainebleau",
+      "seoDescription": "Des repères pour parler des suites d’une intervention avec votre praticien. Repères pour préparer votre consultation à Fontainebleau.",
+      "sections": [],
+      "questions": [],
+      "consultationQuestions": [],
+      "sources": [],
+      "localContext": ""
     },
     {
       "slug": "la-maintenance-implantaire",
@@ -832,7 +1118,50 @@
       ],
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/la-maintenance-implantaire",
       "sourceDate": "2026-10-10",
-      "image": "/assets/la-maintenance-implantaire.jpeg"
+      "image": "/assets/la-maintenance-implantaire.jpeg",
+      "seoTitle": "La maintenance implantaire | Blosmile Fontainebleau",
+      "seoDescription": "Pourquoi les implants nécessitent eux aussi un entretien et des contrôles. Repères pour préparer votre consultation à Fontainebleau.",
+      "sections": [
+        {
+          "title": "Ce que les contrôles permettent de vérifier",
+          "paragraphs": [
+            "Le suivi ne porte pas seulement sur la dent visible. Le praticien examine aussi les tissus autour de l'implant et les éléments de la prothèse. Il peut vérifier les contacts entre les dents et rechercher un changement qui mérite une prise en charge. Le rythme des visites est défini selon votre situation."
+          ],
+          "id": "repere-1"
+        },
+        {
+          "title": "Un entretien adapté à votre bouche",
+          "paragraphs": [
+            "Le nettoyage quotidien et l'entretien professionnel se complètent. Les espaces autour d'une prothèse ne sont pas tous accessibles de la même manière. Demandez quels accessoires vous conviennent et comment les utiliser : une démonstration aide à comprendre les gestes sans choisir seul une méthode qui serait mal adaptée à votre restauration."
+          ],
+          "id": "repere-2"
+        },
+        {
+          "title": "Partager ce qui a changé",
+          "paragraphs": [
+            "Une gêne nouvelle, un saignement ou une sensation de mobilité sont des informations à signaler au cabinet. Décrivez quand le changement est apparu et ce que vous ressentez. Ces éléments aident à organiser votre rendez-vous ; ils ne permettent pas de conclure seul à la cause du problème. Gardez également les références de vos implants si vous en disposez."
+          ],
+          "id": "repere-3"
+        }
+      ],
+      "consultationQuestions": [
+        "Quel rythme de contrôle convient à mes implants ?",
+        "Comment nettoyer les espaces autour de ma prothèse ?",
+        "Quels changements dois-je signaler au cabinet sans attendre mon prochain contrôle ?"
+      ],
+      "localContext": "Pour organiser un suivi implantaire à Fontainebleau, contactez le secrétariat Blosmile au 192 rue Grande. Si l'implant a été posé ailleurs, indiquez-le lors de l'appel et demandez quels documents apporter pour préparer l'échange.",
+      "sources": [
+        {
+          "title": "Blosmile — La maintenance implantaire",
+          "url": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/la-maintenance-implantaire"
+        },
+        {
+          "title": "Blosmile — Votre passeport implantaire",
+          "url": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/votre-passeport-implantaire"
+        }
+      ],
+      "updatedAt": "2026-10-10",
+      "questions": []
     },
     {
       "slug": "votre-passeport-implantaire",
@@ -846,7 +1175,14 @@
       ],
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/votre-passeport-implantaire",
       "sourceDate": "2026-10-10",
-      "image": "/assets/votre-passeport-implantaire.jpeg"
+      "image": "/assets/votre-passeport-implantaire.jpeg",
+      "seoTitle": "Votre passeport implantaire | Blosmile Fontainebleau",
+      "seoDescription": "Un document utile pour identifier vos implants et faciliter leur suivi. Repères pour préparer votre consultation à Fontainebleau.",
+      "sections": [],
+      "questions": [],
+      "consultationQuestions": [],
+      "sources": [],
+      "localContext": ""
     },
     {
       "slug": "precautions-a-prendre-pour-un-comblement-de-sinus",
@@ -860,7 +1196,14 @@
       ],
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/precautions-a-prendre-pour-un-comblement-de-sinus",
       "sourceDate": "2026-10-10",
-      "image": "/assets/precautions-a-prendre-pour-un-comblement-de-sinus.jpeg"
+      "image": "/assets/precautions-a-prendre-pour-un-comblement-de-sinus.jpeg",
+      "seoTitle": "Précautions à prendre pour un comblement de sinus | Blosmile Fontainebleau",
+      "seoDescription": "Préparer les échanges avec le cabinet avant et après un sinus lift. Repères pour préparer votre consultation à Fontainebleau.",
+      "sections": [],
+      "questions": [],
+      "consultationQuestions": [],
+      "sources": [],
+      "localContext": ""
     },
     {
       "slug": "les-implants-questions-reponses",
@@ -874,7 +1217,50 @@
       ],
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/les-implants-questions-reponses",
       "sourceDate": "2026-10-10",
-      "image": "/assets/les-implants-questions-reponses.jpeg"
+      "image": "/assets/les-implants-questions-reponses.jpeg",
+      "seoTitle": "Les implants : questions / réponses | Blosmile Fontainebleau",
+      "seoDescription": "Les principaux sujets à aborder avant de commencer un traitement implantaire. Repères pour préparer votre consultation à Fontainebleau.",
+      "sections": [
+        {
+          "title": "Commencer par votre situation",
+          "paragraphs": [
+            "Une dent manquante ne conduit pas automatiquement à la même solution pour chacun. Le bilan permet d'examiner la bouche, les dents voisines et l'os disponible. Apportez vos examens récents si vous en avez : le praticien vous indiquera lesquels sont utiles et si d'autres explorations sont nécessaires."
+          ],
+          "id": "repere-1"
+        },
+        {
+          "title": "Comprendre l'ensemble du projet",
+          "paragraphs": [
+            "L'implant et la dent qui s'appuie dessus correspondent à des étapes différentes. Demandez comment s'articulent la chirurgie, la cicatrisation, la prothèse et les contrôles. La possibilité d'une solution provisoire fait aussi partie des sujets à aborder. Le calendrier est construit à partir de votre bilan, avec les contraintes qui vous concernent."
+          ],
+          "id": "repere-2"
+        },
+        {
+          "title": "Prendre le temps de lire le devis",
+          "paragraphs": [
+            "Le devis permet de comprendre les actes proposés et les matériaux. Faites expliquer les éléments que vous ne reconnaissez pas, ainsi que les alternatives envisageables. Vous pouvez transmettre ce document à votre complémentaire santé pour connaître ses conditions de prise en charge, avant de vous décider."
+          ],
+          "id": "repere-3"
+        }
+      ],
+      "consultationQuestions": [
+        "Quelles solutions peuvent remplacer ma dent dans ma situation ?",
+        "Quelles étapes et quels contrôles faut-il prévoir dans mon parcours ?",
+        "Quels éléments du devis dois-je transmettre à ma complémentaire santé ?"
+      ],
+      "localContext": "Pour préparer votre projet à Fontainebleau, contactez Blosmile au 192 rue Grande. La page Accès vous permet de choisir votre itinéraire ; pensez à conserver vos questions avec les documents à apporter au rendez-vous.",
+      "sources": [
+        {
+          "title": "Blosmile — Les implants : questions / réponses",
+          "url": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/les-implants-questions-reponses"
+        },
+        {
+          "title": "Assurance Maladie — Comprendre le devis de votre dentiste",
+          "url": "https://www.ameli.fr/assure/remboursements/rembourse/soins-protheses-dentaires-optique-audition/consultations-soins-protheses-dentaires/comprendre-devis-dentiste"
+        }
+      ],
+      "updatedAt": "2026-10-10",
+      "questions": []
     },
     {
       "slug": "la-peri-implantite",
@@ -888,7 +1274,14 @@
       ],
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/la-peri-implantite",
       "sourceDate": "2026-10-10",
-      "image": "/assets/la-peri-implantite.jpeg"
+      "image": "/assets/la-peri-implantite.jpeg",
+      "seoTitle": "La péri-implantite | Blosmile Fontainebleau",
+      "seoDescription": "Comprendre l’inflammation qui peut affecter les tissus autour d’un implant. Repères pour préparer votre consultation à Fontainebleau.",
+      "sections": [],
+      "questions": [],
+      "consultationQuestions": [],
+      "sources": [],
+      "localContext": ""
     },
     {
       "slug": "les-differentes-pieces-d-un-implant",
@@ -902,7 +1295,14 @@
       ],
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/les-differentes-pieces-d-un-implant",
       "sourceDate": "2026-10-10",
-      "image": "/assets/les-differentes-pieces-dun-implant.jpeg"
+      "image": "/assets/les-differentes-pieces-dun-implant.jpeg",
+      "seoTitle": "Les différentes pièces d’un implant | Blosmile Fontainebleau",
+      "seoDescription": "Implant, pilier et prothèse : comprendre le rôle de chaque élément. Repères pour préparer votre consultation à Fontainebleau.",
+      "sections": [],
+      "questions": [],
+      "consultationQuestions": [],
+      "sources": [],
+      "localContext": ""
     },
     {
       "slug": "la-mise-en-charge-immediate-d-une-prothese-sur-un-implant-mci",
@@ -916,7 +1316,14 @@
       ],
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/la-mise-en-charge-immediate-d-une-prothese-sur-un-implant-mci",
       "sourceDate": "2026-10-10",
-      "image": "/assets/la-mise-en-charge-immediate-dune-prothese-sur-un-implant-mci.jpeg"
+      "image": "/assets/la-mise-en-charge-immediate-dune-prothese-sur-un-implant-mci.jpeg",
+      "seoTitle": "La mise en charge immédiate d’une prothèse sur un implant (mci) | Blosmile Fontainebleau",
+      "seoDescription": "Dans quels cas une dent provisoire peut accompagner rapidement la pose d’un implant. Repères pour préparer votre consultation à Fontainebleau.",
+      "sections": [],
+      "questions": [],
+      "consultationQuestions": [],
+      "sources": [],
+      "localContext": ""
     },
     {
       "slug": "qu-est-ce-qu-un-implant-indications-et-contre-indications",
@@ -930,7 +1337,14 @@
       ],
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/qu-est-ce-qu-un-implant-indications-et-contre-indications",
       "sourceDate": "2026-10-10",
-      "image": "/assets/qu-est-ce-qu-un-implant-indications-et-contre-indications.jpeg"
+      "image": "/assets/qu-est-ce-qu-un-implant-indications-et-contre-indications.jpeg",
+      "seoTitle": "Qu'est-ce qu'un implant ? indications et contre-indications | Blosmile Fontainebleau",
+      "seoDescription": "Les éléments du bilan qui permettent d’évaluer un projet implantaire. Repères pour préparer votre consultation à Fontainebleau.",
+      "sections": [],
+      "questions": [],
+      "consultationQuestions": [],
+      "sources": [],
+      "localContext": ""
     },
     {
       "slug": "la-pose-d-implants-dentaires",
@@ -944,7 +1358,50 @@
       ],
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/la-pose-d-implants-dentaires",
       "sourceDate": "2026-10-10",
-      "image": "/assets/la-pose-d-implants-dentaires.jpeg"
+      "image": "/assets/la-pose-d-implants-dentaires.jpeg",
+      "seoTitle": "La pose d'implants dentaires | Blosmile Fontainebleau",
+      "seoDescription": "Les grandes étapes d’un parcours implantaire, du bilan au suivi. Repères pour préparer votre consultation à Fontainebleau.",
+      "sections": [
+        {
+          "title": "Avant l'intervention : faire le point",
+          "paragraphs": [
+            "Le projet commence par l'examen de la bouche et de votre situation médicale. Les images permettent notamment d'étudier la zone qui doit recevoir l'implant. Préparez la liste de vos traitements et signalez tout changement de santé. Le praticien vous explique l'organisation retenue et répond à vos questions avant la chirurgie."
+          ],
+          "id": "repere-1"
+        },
+        {
+          "title": "Une chirurgie inscrite dans un parcours",
+          "paragraphs": [
+            "L'implant est placé dans l'os sous anesthésie locale. La gestion de la gencive et les étapes qui suivent peuvent différer selon le projet. Il ne faut donc pas comparer votre calendrier à celui d'un proche : la situation osseuse et les éventuels soins associés participent au choix de la technique."
+          ],
+          "id": "repere-2"
+        },
+        {
+          "title": "Après la pose : garder le contact",
+          "paragraphs": [
+            "Les contrôles accompagnent la cicatrisation puis la réalisation de la prothèse. Les consignes remises au cabinet sont adaptées à votre intervention ; cette fiche ne les remplace pas. Notez le moyen de joindre l'équipe et faites préciser les situations dans lesquelles la contacter, ainsi que les gestes d'entretien qui vous seront montrés."
+          ],
+          "id": "repere-3"
+        }
+      ],
+      "consultationQuestions": [
+        "Comment mon état de santé intervient-il dans la préparation ?",
+        "Quelles étapes sont prévues entre la pose et la prothèse ?",
+        "Quelles consignes et quels contacts dois-je garder après l'intervention ?"
+      ],
+      "localContext": "Les cabinets Blosmile se trouvent au 192 rue Grande à Fontainebleau. Avant chaque rendez-vous du parcours implantaire, consultez les informations d'accès et vérifiez auprès du secrétariat les documents ou dispositions à prévoir.",
+      "sources": [
+        {
+          "title": "Blosmile — La pose d'implants dentaires",
+          "url": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/la-pose-d-implants-dentaires"
+        },
+        {
+          "title": "Blosmile — Implantologie",
+          "url": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/implantologie"
+        }
+      ],
+      "updatedAt": "2026-10-10",
+      "questions": []
     },
     {
       "slug": "les-protheses-dentaires-sur-implants",
@@ -958,7 +1415,14 @@
       ],
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/les-protheses-dentaires-sur-implants",
       "sourceDate": "2026-10-10",
-      "image": "/assets/les-protheses-dentaires-sur-implants.jpeg"
+      "image": "/assets/les-protheses-dentaires-sur-implants.jpeg",
+      "seoTitle": "Les prothèses dentaires sur implants | Blosmile Fontainebleau",
+      "seoDescription": "Couronne, bridge ou prothèse amovible : les implants peuvent soutenir différents projets. Repères pour préparer votre consultation à Fontainebleau.",
+      "sections": [],
+      "questions": [],
+      "consultationQuestions": [],
+      "sources": [],
+      "localContext": ""
     },
     {
       "slug": "l-analyse-pre-implantaire",
@@ -972,7 +1436,14 @@
       ],
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/l-analyse-pre-implantaire",
       "sourceDate": "2026-10-10",
-      "image": "/assets/l-analyse-pre-implantaire.jpeg"
+      "image": "/assets/l-analyse-pre-implantaire.jpeg",
+      "seoTitle": "L'analyse pré-implantaire | Blosmile Fontainebleau",
+      "seoDescription": "Pourquoi le projet de future dent guide la préparation implantaire. Repères pour préparer votre consultation à Fontainebleau.",
+      "sections": [],
+      "questions": [],
+      "consultationQuestions": [],
+      "sources": [],
+      "localContext": ""
     },
     {
       "slug": "les-greffes-osseuses-pre-implantaires",
@@ -986,7 +1457,14 @@
       ],
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/les-greffes-osseuses-pre-implantaires",
       "sourceDate": "2026-10-10",
-      "image": "/assets/les-greffes-osseuses-pre-implantaires.jpeg"
+      "image": "/assets/les-greffes-osseuses-pre-implantaires.jpeg",
+      "seoTitle": "Les greffes osseuses pré-implantaires | Blosmile Fontainebleau",
+      "seoDescription": "Le rôle d’une augmentation osseuse avant certains traitements par implants. Repères pour préparer votre consultation à Fontainebleau.",
+      "sections": [],
+      "questions": [],
+      "consultationQuestions": [],
+      "sources": [],
+      "localContext": ""
     },
     {
       "slug": "la-greffe-osseuse-d-apposition-ou-greffe-en-onlay",
@@ -1000,7 +1478,14 @@
       ],
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/la-greffe-osseuse-d-apposition-ou-greffe-en-onlay",
       "sourceDate": "2026-10-10",
-      "image": "/assets/la-greffe-osseuse-d-apposition-ou-greffe-en-onlay.jpeg"
+      "image": "/assets/la-greffe-osseuse-d-apposition-ou-greffe-en-onlay.jpeg",
+      "seoTitle": "La greffe osseuse d'apposition ou greffe en onlay | Blosmile Fontainebleau",
+      "seoDescription": "Une approche d’augmentation osseuse étudiée selon le volume à reconstruire. Repères pour préparer votre consultation à Fontainebleau.",
+      "sections": [],
+      "questions": [],
+      "consultationQuestions": [],
+      "sources": [],
+      "localContext": ""
     },
     {
       "slug": "l-eclaircissement-dentaire",
@@ -1014,7 +1499,46 @@
       ],
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/l-eclaircissement-dentaire",
       "sourceDate": "2026-10-10",
-      "image": "/assets/leclaircissement-dentaire.jpeg"
+      "image": "/assets/leclaircissement-dentaire.jpeg",
+      "seoTitle": "L’éclaircissement dentaire | Blosmile Fontainebleau",
+      "seoDescription": "Un traitement de la teinte des dents qui commence par un bilan. Repères pour préparer votre consultation à Fontainebleau.",
+      "sections": [
+        {
+          "title": "Parler de la teinte qui vous préoccupe",
+          "paragraphs": [
+            "L'éclaircissement, souvent appelé blanchiment, concerne la couleur des dents naturelles. Les attentes peuvent être très différentes d'une personne à l'autre. Lors du bilan, précisez ce qui vous gêne et signalez les sensibilités que vous ressentez déjà. L'état des dents et des gencives compte dans le choix d'un éventuel traitement."
+          ],
+          "id": "repere-1"
+        },
+        {
+          "title": "Un protocole à comprendre avant de commencer",
+          "paragraphs": [
+            "Si des gouttières sont proposées, leur adaptation et leurs modalités d'utilisation sont expliquées au cabinet. La durée de port et l'emploi du produit dépendent du protocole retenu : ne reprenez pas les consignes d'une autre personne. Faites reformuler tout point incertain avant de poursuivre chez vous et gardez les instructions qui vous sont remises."
+          ],
+          "id": "repere-2"
+        },
+        {
+          "title": "Connaître les limites et le suivi",
+          "paragraphs": [
+            "Toutes les colorations ne répondent pas de la même façon à l'éclaircissement. D'autres options peuvent être discutées après examen. Une sensibilité peut aussi survenir : demandez dès le départ comment réagir et quand contacter le praticien. L'objectif de la consultation est de définir ce qui est envisageable pour vous, sans choisir à partir d'une photographie de résultat."
+          ],
+          "id": "repere-3"
+        }
+      ],
+      "consultationQuestions": [
+        "Ma coloration peut-elle relever d'un éclaircissement ?",
+        "Quelles consignes précises dois-je suivre avec mes gouttières ?",
+        "Que dois-je faire si mes dents deviennent sensibles ?"
+      ],
+      "localContext": "À Fontainebleau, vous pouvez évoquer votre projet esthétique lors d'une consultation chez Blosmile, au 192 rue Grande. La page Accès rassemble les itinéraires pour préparer votre venue et le secrétariat vous renseigne sur les rendez-vous.",
+      "sources": [
+        {
+          "title": "Blosmile — L'éclaircissement dentaire",
+          "url": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/l-eclaircissement-dentaire"
+        }
+      ],
+      "updatedAt": "2026-10-10",
+      "questions": []
     },
     {
       "slug": "les-facettes-en-ceramique",
@@ -1028,7 +1552,50 @@
       ],
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/les-facettes-en-ceramique",
       "sourceDate": "2026-10-10",
-      "image": "/assets/les-facettes-en-ceramique.jpeg"
+      "image": "/assets/les-facettes-en-ceramique.jpeg",
+      "seoTitle": "Les facettes en céramique | Blosmile Fontainebleau",
+      "seoDescription": "Une solution esthétique à évaluer selon l’état des dents et du sourire. Repères pour préparer votre consultation à Fontainebleau.",
+      "sections": [
+        {
+          "title": "Définir votre demande avant la technique",
+          "paragraphs": [
+            "La première discussion porte sur ce que vous souhaitez changer : la forme d'une dent, un espace ou une teinte, par exemple. Ces demandes ne conduisent pas toutes à des facettes. Le bilan aide à comprendre les options possibles et la place éventuelle d'un éclaircissement ou d'un autre traitement dans votre projet."
+          ],
+          "id": "repere-1"
+        },
+        {
+          "title": "Examiner la dent et l'ensemble du sourire",
+          "paragraphs": [
+            "La santé des dents et des gencives ainsi que la façon dont les mâchoires se rencontrent sont prises en compte. Signalez notamment si vous serrez ou grincez des dents. Une préparation dentaire peut être nécessaire : demandez ce qu'elle implique pour les dents concernées avant de retenir cette solution avec votre praticien."
+          ],
+          "id": "repere-2"
+        },
+        {
+          "title": "Échanger sur le projet et ses limites",
+          "paragraphs": [
+            "L'étude esthétique permet de discuter la forme et la teinte envisagées. Selon le projet, une simulation ou une étape provisoire peut soutenir cet échange. Elle reste un outil de discussion : une image ne remplace pas l'examen clinique. Faites également préciser l'entretien et les contrôles, afin de comprendre ce que le traitement implique au quotidien."
+          ],
+          "id": "repere-3"
+        }
+      ],
+      "consultationQuestions": [
+        "Quelles alternatives permettraient de répondre à ma demande ?",
+        "Une préparation de mes dents est-elle nécessaire dans mon cas ?",
+        "Comment discuter le projet esthétique et organiser son suivi ?"
+      ],
+      "localContext": "Le cabinet Blosmile vous accueille au 192 rue Grande à Fontainebleau pour examiner votre demande. Préparez vos questions avant le rendez-vous et consultez la page Accès pour choisir votre itinéraire jusqu'au cabinet.",
+      "sources": [
+        {
+          "title": "Blosmile — Les facettes en céramique",
+          "url": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/les-facettes-en-ceramique"
+        },
+        {
+          "title": "Blosmile — Esthétique",
+          "url": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/esthetique"
+        }
+      ],
+      "updatedAt": "2026-10-10",
+      "questions": []
     },
     {
       "slug": "l-orthodontie-invisible",
@@ -1042,7 +1609,14 @@
       ],
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/l-orthodontie-invisible",
       "sourceDate": "2026-10-10",
-      "image": "/assets/l-orthodontie-invisible.jpeg"
+      "image": "/assets/l-orthodontie-invisible.jpeg",
+      "seoTitle": "L'orthodontie invisible | Blosmile Fontainebleau",
+      "seoDescription": "Découvrir les approches orthodontiques qui privilégient la discrétion. Repères pour préparer votre consultation à Fontainebleau.",
+      "sections": [],
+      "questions": [],
+      "consultationQuestions": [],
+      "sources": [],
+      "localContext": ""
     },
     {
       "slug": "inlay-et-onlay-une-technique-conservatrice",
@@ -1056,7 +1630,50 @@
       ],
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/inlay-et-onlay-une-technique-conservatrice",
       "sourceDate": "2026-10-10",
-      "image": "/assets/inlay-et-onlay-une-technique-conservatrice.jpeg"
+      "image": "/assets/inlay-et-onlay-une-technique-conservatrice.jpeg",
+      "seoTitle": "Inlay et onlay, une technique conservatrice | Blosmile Fontainebleau",
+      "seoDescription": "Restaurer une partie de dent avec une pièce fabriquée sur mesure. Repères pour préparer votre consultation à Fontainebleau.",
+      "sections": [
+        {
+          "title": "Choisir selon la partie de dent à restaurer",
+          "paragraphs": [
+            "L'inlay et l'onlay sont des pièces réalisées pour s'adapter à une dent précise. Leur différence concerne surtout l'étendue de la restauration. Le praticien examine ce qui reste de la dent et l'importance de la zone abîmée pour discuter cette solution. Le nom de la technique ne suffit donc pas à déterminer si elle vous convient."
+          ],
+          "id": "repere-1"
+        },
+        {
+          "title": "Comprendre la préparation et la mise en place",
+          "paragraphs": [
+            "La zone à restaurer est préparée, puis une empreinte permet de concevoir la pièce adaptée. Celle-ci est ensuite mise en place et collée. Le matériau et la forme sont choisis dans le cadre du projet. Demandez quelles étapes sont prévues pour votre dent et quelles précautions suivre entre les rendez-vous, si plusieurs séances sont nécessaires."
+          ],
+          "id": "repere-2"
+        },
+        {
+          "title": "Comparer les options avec des repères clairs",
+          "paragraphs": [
+            "Une obturation, un inlay, un onlay ou une autre restauration ne répondent pas toujours à la même situation. Faites expliquer la raison du choix proposé et ses alternatives. Le devis vous aide à identifier les actes et les matériaux ; transmettez-le à votre complémentaire santé pour connaître ses conditions de prise en charge."
+          ],
+          "id": "repere-3"
+        }
+      ],
+      "consultationQuestions": [
+        "Pourquoi proposer un inlay ou un onlay pour cette dent ?",
+        "Quel matériau et quelles étapes sont prévus dans mon projet ?",
+        "Quelles consignes d'entretien et quels contrôles seront utiles après la pose ?"
+      ],
+      "localContext": "Pour faire examiner une dent à restaurer à Fontainebleau, contactez Blosmile au 192 rue Grande. Signalez le motif de votre visite au secrétariat et utilisez la page Accès pour préparer votre trajet.",
+      "sources": [
+        {
+          "title": "Blosmile — Inlay et onlay, une technique conservatrice",
+          "url": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/inlay-et-onlay-une-technique-conservatrice"
+        },
+        {
+          "title": "Assurance Maladie — Comprendre le devis de votre dentiste",
+          "url": "https://www.ameli.fr/assure/remboursements/rembourse/soins-protheses-dentaires-optique-audition/consultations-soins-protheses-dentaires/comprendre-devis-dentiste"
+        }
+      ],
+      "updatedAt": "2026-10-10",
+      "questions": []
     },
     {
       "slug": "les-bridges-et-ponts-dentaires",
@@ -1070,7 +1687,14 @@
       ],
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/les-bridges-et-ponts-dentaires",
       "sourceDate": "2026-10-10",
-      "image": "/assets/les-bridges-et-ponts-dentaires.jpeg"
+      "image": "/assets/les-bridges-et-ponts-dentaires.jpeg",
+      "seoTitle": "Les bridges et ponts dentaires | Blosmile Fontainebleau",
+      "seoDescription": "Comprendre cette solution fixe pour remplacer une ou plusieurs dents. Repères pour préparer votre consultation à Fontainebleau.",
+      "sections": [],
+      "questions": [],
+      "consultationQuestions": [],
+      "sources": [],
+      "localContext": ""
     },
     {
       "slug": "la-technique-invisalign-align-technology",
@@ -1084,7 +1708,409 @@
       ],
       "sourceUrl": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/blog/articles/la-technique-invisalign-align-technology",
       "sourceDate": "2026-10-10",
-      "image": "/assets/la-technique-invisalign-align-technology.jpeg"
+      "image": "/assets/la-technique-invisalign-align-technology.jpeg",
+      "seoTitle": "La technique invisalign® – align technology | Blosmile Fontainebleau",
+      "seoDescription": "Le principe d’un traitement orthodontique par aligneurs conçus numériquement. Repères pour préparer votre consultation à Fontainebleau.",
+      "sections": [],
+      "questions": [],
+      "consultationQuestions": [],
+      "sources": [],
+      "localContext": ""
+    },
+    {
+      "slug": "gencives-qui-saignent-fontainebleau",
+      "title": "Gencives qui saignent : quand consulter à Fontainebleau ?",
+      "description": "Saignement au brossage, gencives sensibles : comprendre les signes, préparer un bilan et découvrir les soins des gencives à Fontainebleau.",
+      "category": "parodontologie",
+      "image": "/assets/examen.webp",
+      "paragraphs": [
+        "Un peu de sang au brossage mérite votre attention, même sans douleur. Un examen permet de rechercher la cause du saignement et de savoir si les gencives ont besoin de soins. Ce guide vous aide à préparer cet échange avec votre dentiste."
+      ],
+      "sections": [
+        {
+          "id": "reperer-les-signes",
+          "title": "Quels signes observer ?",
+          "paragraphs": [
+            "Une rougeur, un gonflement ou une sensibilité peuvent accompagner le saignement. La plaque bactérienne joue un rôle fréquent dans l’inflammation des gencives. Une gingivite concerne la gencive ; une parodontite touche aussi les tissus qui soutiennent la dent. Seul un bilan peut les distinguer."
+          ]
+        },
+        {
+          "id": "bons-gestes",
+          "title": "Faut-il continuer à se brosser les dents ?",
+          "paragraphs": [
+            "Oui : arrêter le brossage favorise l’accumulation de plaque. Brossez délicatement avec une brosse souple et demandez quelle méthode de nettoyage entre les dents vous convient. Un saignement qui revient ne doit pas être simplement masqué par un produit d’hygiène."
+          ]
+        },
+        {
+          "id": "bilan-des-gencives",
+          "title": "À quoi sert le bilan ?",
+          "paragraphs": [
+            "Le chirurgien-dentiste examine les gencives et peut mesurer les espaces autour des dents. Il tient compte de votre santé et de vos traitements. Les soins proposés dépendent de ce bilan ; un saignement ne signifie donc pas automatiquement qu’un traitement complexe est nécessaire."
+          ]
+        },
+        {
+          "id": "preparer-la-consultation",
+          "title": "Les informations utiles à apporter",
+          "paragraphs": [
+            "Notez depuis quand le saignement existe, les zones concernées et ce qui le déclenche. Signalez aussi une dent qui semble bouger, une mauvaise haleine persistante ou un changement récent de votre état de santé. Demandez une explication des constatations et des prochaines étapes."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "question": "Est-ce rassurant si je n’ai pas mal ?",
+          "answer": "L’absence de douleur ne suffit pas à écarter un problème de gencives. Un saignement répété justifie un avis dentaire."
+        },
+        {
+          "question": "Dois-je annuler le suivi si le saignement disparaît ?",
+          "answer": "Gardez les contrôles prévus avec votre dentiste : l’amélioration visible ne remplace pas l’évaluation de la santé des gencives."
+        }
+      ],
+      "consultationQuestions": [
+        "Quelle est la cause probable de mes saignements ?",
+        "Quels gestes d’hygiène conviennent à mes gencives ?",
+        "Quel suivi sera utile après le bilan ?"
+      ],
+      "sources": [
+        {
+          "title": "Assurance Maladie — Comprendre la gingivite et la parodontite",
+          "url": "https://www.ameli.fr/assure/sante/themes/maladie-gencives/definition-causes-symptomes"
+        },
+        {
+          "title": "Assurance Maladie — Les bons réflexes en cas de gingivite",
+          "url": "https://www.ameli.fr/assure/sante/themes/maladie-gencives/bons-reflexes-gingivite"
+        },
+        {
+          "title": "Assurance Maladie — Consultation et traitement des gencives",
+          "url": "https://www.ameli.fr/assure/sante/themes/maladie-gencives/consultation-traitement-gingivite-parodontite"
+        },
+        {
+          "title": "Blosmile — Parodontologie à Fontainebleau",
+          "url": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/parodontologie"
+        }
+      ],
+      "sourceDate": "2026-10-10",
+      "sourceUrl": "https://www.ameli.fr/assure/sante/themes/maladie-gencives/definition-causes-symptomes",
+      "localContext": "À Fontainebleau, Blosmile présente la parodontologie parmi ses activités. Pour une demande de rendez-vous concernant vos gencives, précisez le motif au secrétariat ; le praticien déterminera les examens et les soins adaptés.",
+      "updatedAt": "2026-10-10",
+      "seoTitle": "Gencives qui saignent : quand consulter à Fontainebleau ? | Blosmile",
+      "seoDescription": "Saignement au brossage, gencives sensibles : comprendre les signes, préparer un bilan et découvrir les soins des gencives à Fontainebleau."
+    },
+    {
+      "slug": "detartrage-surfacage-difference-fontainebleau",
+      "title": "Détartrage ou surfaçage : comprendre vos soins à Fontainebleau",
+      "description": "Quelle différence entre détartrage et surfaçage radiculaire ? Les repères pour comprendre un bilan des gencives et discuter de votre traitement.",
+      "category": "parodontologie",
+      "image": "/assets/cabinet-soins.jpeg",
+      "paragraphs": [
+        "Votre dentiste évoque un détartrage ou un surfaçage radiculaire ? Ces termes décrivent des soins aux objectifs proches, mais dont la profondeur et l’indication diffèrent. Comprendre cette distinction aide à participer aux décisions concernant la santé de vos gencives."
+      ],
+      "sections": [
+        {
+          "id": "detartrage",
+          "title": "Le détartrage : retirer les dépôts",
+          "paragraphs": [
+            "Le tartre est un dépôt dur qu’un simple brossage ne peut pas enlever. Le détartrage le retire à l’aide d’instruments professionnels, notamment autour des dents et entre elles. Son indication repose sur l’examen, et pas uniquement sur l’aspect esthétique des dents."
+          ]
+        },
+        {
+          "id": "surfacage",
+          "title": "Le surfaçage : nettoyer sous la gencive",
+          "paragraphs": [
+            "Le surfaçage radiculaire vise les dépôts situés plus profondément, au contact des racines, dans le cadre d’un traitement parodontal. Il peut être réalisé sous anesthésie locale et réparti sur plusieurs séances. Le nombre de zones à traiter dépend du bilan individuel."
+          ]
+        },
+        {
+          "id": "reevaluation",
+          "title": "Pourquoi prévoir des contrôles ?",
+          "paragraphs": [
+            "L’hygiène quotidienne et les contrôles accompagnent les soins professionnels. Respectez le calendrier convenu, y compris lorsque les saignements diminuent. Si les symptômes reviennent, reprenez contact. L’objectif du suivi est de réévaluer la situation et d’ajuster les conseils ou les soins lorsque cela est nécessaire."
+          ]
+        },
+        {
+          "id": "decision-eclairee",
+          "title": "Comprendre la proposition de soins",
+          "paragraphs": [
+            "Avant de commencer, demandez quelles zones sont concernées, comment les séances seront organisées et quelles sensations sont possibles ensuite. Faites préciser le coût et la prise en charge correspondant à votre situation. Ces réponses permettent de distinguer les différentes étapes et de préparer vos rendez-vous."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "question": "Le détartrage abîme-t-il l’émail ?",
+          "answer": "Selon l’UFSBD, les instruments utilisés correctement par le dentiste n’abîment pas les dents. Une sensibilité au froid peut être temporairement ressentie."
+        },
+        {
+          "question": "Tout détartrage doit-il être suivi d’un surfaçage ?",
+          "answer": "Non. Un surfaçage répond à une indication parodontale déterminée par l’examen ; il n’est pas une suite automatique du détartrage."
+        }
+      ],
+      "consultationQuestions": [
+        "Qu’a montré mon bilan parodontal ?",
+        "Quelles zones nécessitent ce traitement ?",
+        "Comment sera organisé le contrôle après les soins ?"
+      ],
+      "sources": [
+        {
+          "title": "Assurance Maladie — Consultation et traitement de la gingivite et de la parodontite",
+          "url": "https://www.ameli.fr/assure/sante/themes/maladie-gencives/consultation-traitement-gingivite-parodontite"
+        },
+        {
+          "title": "UFSBD — Questions aux chirurgiens-dentistes",
+          "url": "https://www.ufsbd.fr/paroles-dexperts/"
+        },
+        {
+          "title": "Assurance Maladie — Suivi des gencives",
+          "url": "https://www.ameli.fr/assure/sante/themes/maladie-gencives/bons-reflexes-gingivite"
+        },
+        {
+          "title": "Blosmile — Parodontologie et surfaçage",
+          "url": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/parodontologie"
+        }
+      ],
+      "sourceDate": "2026-10-10",
+      "sourceUrl": "https://www.ameli.fr/assure/sante/themes/maladie-gencives/consultation-traitement-gingivite-parodontite",
+      "localContext": "Le site du cabinet Blosmile à Fontainebleau présente les soins parodontaux et le surfaçage. Votre consultation permettra de discuter de leur pertinence pour vous, ainsi que de l’organisation d’un éventuel suivi au cabinet.",
+      "updatedAt": "2026-10-10",
+      "seoTitle": "Détartrage ou surfaçage : comprendre vos soins à Fontainebleau | Blosmile",
+      "seoDescription": "Quelle différence entre détartrage et surfaçage radiculaire ? Les repères pour comprendre un bilan des gencives et discuter de votre traitement."
+    },
+    {
+      "slug": "devitalisation-traitement-canalaire-fontainebleau",
+      "title": "Dévitalisation à Fontainebleau : comprendre le traitement canalaire",
+      "description": "Pourquoi traiter les canaux d’une dent ? Découvrez les principales étapes de l’endodontie, la restauration de la dent et les questions à poser.",
+      "category": "endodontie",
+      "image": "/assets/devitalisation.webp",
+      "paragraphs": [
+        "Entendre parler de dévitalisation peut susciter des questions. Le traitement canalaire concerne l’intérieur de la dent. Son objectif est de permettre sa conservation lorsque la situation le permet, après un diagnostic et une discussion des options avec le chirurgien-dentiste."
+      ],
+      "sections": [
+        {
+          "id": "indication",
+          "title": "Pourquoi le proposer ?",
+          "paragraphs": [
+            "Au centre de la dent, la pulpe contient notamment des nerfs et des vaisseaux. Une carie profonde, une fêlure ou un traumatisme peuvent l’endommager. Un traitement canalaire peut alors être indiqué. Toute sensibilité ne conduit pas à une dévitalisation : la décision dépend de l’état de la dent."
+          ]
+        },
+        {
+          "id": "etapes",
+          "title": "Que fait le chirurgien-dentiste ?",
+          "paragraphs": [
+            "Le tissu pulpaire atteint est retiré. Les canaux à l’intérieur des racines sont nettoyés, désinfectés puis obturés. Des radiographies participent au contrôle du traitement. Votre praticien vous explique l’organisation des séances et les moyens prévus pour prendre en compte votre confort."
+          ]
+        },
+        {
+          "id": "restauration",
+          "title": "Pourquoi restaurer ensuite la dent ?",
+          "paragraphs": [
+            "Le traitement des canaux et la restauration de la partie visible répondent à deux besoins différents. Après les soins, la dent doit être reconstituée selon son état. Une couronne peut être nécessaire. Demandez comment s’articulent ces étapes et quelles précautions suivre jusqu’à la restauration définitive."
+          ]
+        },
+        {
+          "id": "echanger",
+          "title": "Les points à éclaircir avant le soin",
+          "paragraphs": [
+            "Indiquez vos symptômes et les traitements déjà réalisés sur la dent, même anciens. Si vous redoutez les soins, dites-le dès la prise de rendez-vous. Demandez quelles solutions sont envisageables, ce qui motive le choix proposé et comment contacter le cabinet si une question apparaît entre deux séances."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "question": "Une dévitalisation signifie-t-elle enlever la dent ?",
+          "answer": "Non : le traitement agit à l’intérieur de la dent. Il se distingue de l’extraction, qui retire la dent."
+        },
+        {
+          "question": "Une dent dévitalisée nécessite-t-elle encore un suivi ?",
+          "answer": "Oui. Le suivi permet de contrôler la dent traitée et sa restauration. Le praticien vous précise les rendez-vous utiles à votre situation."
+        }
+      ],
+      "consultationQuestions": [
+        "Pourquoi ce traitement est-il indiqué pour ma dent ?",
+        "Quelle restauration sera envisagée après le traitement ?",
+        "Quelles consignes et quel suivi dois-je prévoir ?"
+      ],
+      "sources": [
+        {
+          "title": "Assurance Maladie — Traitement des caries",
+          "url": "https://www.ameli.fr/assure/sante/themes/carie-dentaire/traitement"
+        },
+        {
+          "title": "UFSBD — Comprendre la dévitalisation",
+          "url": "https://www.ufsbd.fr/paroles-dexperts/"
+        },
+        {
+          "title": "Assurance Maladie — Les traitements des douleurs dentaires",
+          "url": "https://www.ameli.fr/assure/sante/themes/douleurs-dentaires-bouche/traitement"
+        },
+        {
+          "title": "Blosmile — Endodontie à Fontainebleau",
+          "url": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/endodontie"
+        }
+      ],
+      "sourceDate": "2026-10-10",
+      "sourceUrl": "https://www.ameli.fr/assure/sante/themes/carie-dentaire/traitement",
+      "localContext": "L’endodontie figure parmi les activités présentées par Blosmile à Fontainebleau. Si un autre praticien vous adresse au cabinet, apportez son courrier et les examens disponibles afin de faciliter l’échange sur votre dossier.",
+      "updatedAt": "2026-10-10",
+      "seoTitle": "Dévitalisation à Fontainebleau : comprendre le traitement canalaire | Blosmile",
+      "seoDescription": "Pourquoi traiter les canaux d’une dent ? Découvrez les principales étapes de l’endodontie, la restauration de la dent et les questions à poser."
+    },
+    {
+      "slug": "douleur-dentaire-quand-consulter-fontainebleau",
+      "title": "Douleur dentaire à Fontainebleau : quand consulter ?",
+      "description": "Mal de dent, douleur au chaud ou au froid, gonflement : repérer les signes qui nécessitent un avis rapide et préparer votre appel au cabinet.",
+      "category": "endodontie",
+      "image": "/assets/endodontie.jpeg",
+      "paragraphs": [
+        "Une douleur dentaire ne permet pas, à elle seule, de connaître sa cause. Carie, gencive ou autre problème : l’examen guide le traitement. Pour demander de l’aide, décrivez surtout l’intensité, la durée et les signes associés ; ce sont des informations utiles à l’orientation."
+      ],
+      "sections": [
+        {
+          "id": "demander-un-avis",
+          "title": "Quand demander un rendez-vous ?",
+          "paragraphs": [
+            "Une douleur qui se répète, augmente, apparaît aux repas ou lors du contact avec le chaud et le froid mérite un avis dentaire. Notez depuis quand elle existe et ce qui la déclenche. N’attendez pas que la gêne devienne permanente pour contacter un professionnel."
+          ]
+        },
+        {
+          "id": "urgence",
+          "title": "Quels signes imposent une réaction rapide ?",
+          "paragraphs": [
+            "Une douleur insupportable, une difficulté à ouvrir la bouche ou une dent fracturée ou déplacée après un choc nécessitent un avis dentaire dans la journée. En cas de difficulté à respirer ou à avaler, de gonflement important du visage ou du cou, notamment avec fièvre, appelez le 15 ou le 112 sans attendre."
+          ]
+        },
+        {
+          "id": "attente",
+          "title": "Que faire en attendant un avis ?",
+          "paragraphs": [
+            "Évitez les aliments et boissons qui déclenchent la douleur. En cas de suspicion d’abcès, ne commencez pas un antibiotique restant d’une ancienne prescription. Pour toute question sur un médicament, demandez conseil à un professionnel de santé en précisant vos traitements et vos antécédents."
+          ]
+        },
+        {
+          "id": "appel",
+          "title": "Préparer un appel utile",
+          "paragraphs": [
+            "Expliquez où vous avez mal, si la douleur vous empêche de dormir ou de manger et si vous avez remarqué un gonflement. Signalez un choc récent et un éventuel soin sur cette dent. L’objectif de l’appel est de déterminer la conduite à tenir, sans établir de diagnostic à distance."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "question": "Le cabinet reçoit-il automatiquement toutes les urgences ?",
+          "answer": "Une prise en charge dépend de la situation et des possibilités du cabinet. Appelez avant de vous déplacer ; aucune disponibilité immédiate ne peut être garantie en ligne."
+        },
+        {
+          "question": "Un mal de dent signifie-t-il forcément une dévitalisation ?",
+          "answer": "Non. Plusieurs causes peuvent expliquer une douleur ; le traitement dépend du diagnostic, pas seulement de son intensité."
+        }
+      ],
+      "consultationQuestions": [
+        "Mes symptômes nécessitent-ils une consultation dans la journée ?",
+        "Quels changements dois-je signaler pendant l’attente ?",
+        "Quels documents ou examens dois-je apporter ?"
+      ],
+      "sources": [
+        {
+          "title": "Assurance Maladie — Mal de dent : quand consulter ?",
+          "url": "https://www.ameli.fr/assure/sante/themes/douleurs-dentaires-bouche/bons-reflexes-quand-consulter"
+        },
+        {
+          "title": "Assurance Maladie — Abcès dentaire : consulter et soulager la douleur",
+          "url": "https://www.ameli.fr/assure/sante/themes/abces-dentaire/soulager-douleur-consulter"
+        },
+        {
+          "title": "Assurance Maladie — Causes des douleurs dentaires",
+          "url": "https://www.ameli.fr/assure/sante/themes/douleurs-dentaires-bouche/causes-douleurs"
+        },
+        {
+          "title": "Blosmile — Coordonnées et contact",
+          "url": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/contactez-nous"
+        }
+      ],
+      "sourceDate": "2026-10-10",
+      "sourceUrl": "https://www.ameli.fr/assure/sante/themes/douleurs-dentaires-bouche/bons-reflexes-quand-consulter",
+      "localContext": "Vous êtes à Fontainebleau ou dans les environs ? Contactez le cabinet pour exposer votre demande avant de venir. En présence de signes de gravité, les numéros 15 et 112 restent prioritaires sur une demande de rendez-vous classique.",
+      "updatedAt": "2026-10-10",
+      "seoTitle": "Douleur dentaire à Fontainebleau : quand consulter ? | Blosmile",
+      "seoDescription": "Mal de dent, douleur au chaud ou au froid, gonflement : repérer les signes qui nécessitent un avis rapide et préparer votre appel au cabinet."
+    },
+    {
+      "slug": "premiere-visite-dentiste-fontainebleau",
+      "title": "Votre première visite chez le dentiste à Fontainebleau",
+      "description": "Documents utiles, questions à préparer, parcours de soins et accès : les repères pour organiser votre premier rendez-vous au cabinet Blosmile.",
+      "category": "prevention",
+      "image": "/assets/cabinet-accueil.jpeg",
+      "paragraphs": [
+        "Un premier rendez-vous est l’occasion de faire le point sur votre santé bucco-dentaire et sur vos attentes. Que vous veniez pour un contrôle, une gêne ou une question sur votre sourire, quelques préparatifs simples rendent l’échange plus clair et vous aident à poser les questions qui comptent."
+      ],
+      "sections": [
+        {
+          "id": "motif",
+          "title": "Préciser ce qui vous amène",
+          "paragraphs": [
+            "Au moment de contacter le cabinet, indiquez votre motif principal : contrôle, douleur, dent manquante ou problème de gencive. Distinguez ce qui vous gêne aujourd’hui de ce que vous souhaitez améliorer à plus long terme. Si vous êtes adressé par un professionnel, précisez-le également."
+          ]
+        },
+        {
+          "id": "informations-medicales",
+          "title": "Rassembler les informations utiles",
+          "paragraphs": [
+            "L’UFSBD souligne la place du questionnaire médical lors d’une première consultation. Préparez la liste de vos médicaments, allergies et antécédents à signaler, ainsi que les examens dentaires ou courriers que vous possédez. Demandez au secrétariat quels documents administratifs sont nécessaires pour votre rendez-vous."
+          ]
+        },
+        {
+          "id": "questions-et-attentes",
+          "title": "Parler de vos attentes et de vos appréhensions",
+          "paragraphs": [
+            "Vous pouvez expliquer votre priorité : retrouver du confort pour manger, comprendre un soin proposé ou reprendre un suivi. Si vous êtes inquiet, dites ce qui vous préoccupe. Notez vos questions avant de venir et demandez qu’un terme technique soit reformulé lorsqu’il n’est pas clair."
+          ]
+        },
+        {
+          "id": "suite-du-parcours",
+          "title": "Comprendre la suite du parcours",
+          "paragraphs": [
+            "À l’issue de l’échange et de l’examen, faites préciser les constatations, les possibilités de soins et les étapes envisagées. Un contrôle n’implique pas automatiquement un traitement. Le calendrier, les honoraires et les modalités de suivi sont à discuter selon votre situation, avant de vous organiser."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "question": "Puis-je consulter même si je n’ai pas mal ?",
+          "answer": "Oui. L’UFSBD recommande un contrôle préventif régulier. Votre dentiste adapte le rythme à votre santé bucco-dentaire."
+        },
+        {
+          "question": "Tous les soins seront-ils réalisés dès le premier rendez-vous ?",
+          "answer": "Cela dépend du motif et de l’examen. Demandez au cabinet comment préparer la visite ; un traitement immédiat n’est pas systématique."
+        }
+      ],
+      "consultationQuestions": [
+        "Quelles sont les priorités pour ma santé bucco-dentaire ?",
+        "Quelles options et quelles étapes me proposez-vous ?",
+        "Quel rythme de contrôle sera adapté pour moi ?"
+      ],
+      "sources": [
+        {
+          "title": "UFSBD — Le questionnaire médical",
+          "url": "https://www.ufsbd.fr/espace-pro/nos-ressources-thematiques/questionnaire-medical/"
+        },
+        {
+          "title": "UFSBD — Questions aux chirurgiens-dentistes",
+          "url": "https://www.ufsbd.fr/paroles-dexperts/"
+        },
+        {
+          "title": "Blosmile — Présentation et informations pratiques du cabinet",
+          "url": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/notre-clinique"
+        },
+        {
+          "title": "Blosmile — Contacter le cabinet",
+          "url": "https://selarl-cabinetdentaire-194ruegrande.chirurgiens-dentistes.fr/contactez-nous"
+        }
+      ],
+      "sourceDate": "2026-10-10",
+      "sourceUrl": "https://www.ufsbd.fr/espace-pro/nos-ressources-thematiques/questionnaire-medical/",
+      "localContext": "Pour votre venue à Fontainebleau, consultez la page Accès et itinéraire avant le départ. Elle rassemble l’adresse du cabinet et les liens de navigation. Le secrétariat peut préciser les informations nécessaires à l’organisation de votre visite.",
+      "updatedAt": "2026-10-10",
+      "seoTitle": "Votre première visite chez le dentiste à Fontainebleau | Blosmile",
+      "seoDescription": "Documents utiles, questions à préparer, parcours de soins et accès : les repères pour organiser votre premier rendez-vous au cabinet Blosmile."
     }
   ],
   "copy": {

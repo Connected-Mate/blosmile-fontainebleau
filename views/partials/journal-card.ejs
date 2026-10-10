@@ -1,0 +1,4 @@
+<article class="journal-card" data-journal-card data-category="<%= item.category %>" data-search="<%= [item.title,item.description,item.categoryTitle].join(' ') %>">
+  <a href="/conseils/<%= item.slug %>" class="journal-card-image" tabindex="-1" aria-hidden="true"><img src="<%= item.image || content.home.heroImage %>" alt="" width="640" height="420" loading="lazy"></a>
+  <div class="journal-card-copy"><p class="journal-meta"><span><%= item.categoryTitle %></span><span><%= item.readingMinutes %> min</span></p><h3><a href="/conseils/<%= item.slug %>"><%= item.title %></a></h3><p><%= item.description %></p><a class="text-link" href="/conseils/<%= item.slug %>" aria-label="Lire : <%= item.title %>">Lire le conseil <%- include('icon',{name:'arrow'}) %></a></div>
+</article>

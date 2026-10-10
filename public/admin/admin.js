@@ -25,7 +25,7 @@
     ['settings', 'Réglages et sauvegarde', 'Protégez votre accès et conservez une copie de votre contenu.', '⚙']
   ];
   const labels = {
-    src:'Photographie',alt:'Description de l’image',caption:'Légende',privacy:'Confidentialité',paragraphs:'Paragraphes',sections:'Rubriques',resources:'Conseils',cabinet:'Le cabinet',
+    formations:'Parcours & formations',education:'Diplômes et formations documentés',institutionLinks:'Établissements de formation',links:'Liens des établissements',cabinetAlt:'Description de la photo intérieure',arrivalImage:'Photo de façade pour les itinéraires',featuredSlugs:'Articles mis en avant (slugs)',consultationQuestions:'Questions à poser en consultation',localContext:'Consultation à Fontainebleau',sources:'Sources documentaires',parking:'Parkings à proximité',parkingNote:'Informations de stationnement',accessNote:'Préparer un besoin d’accès particulier',walkingUrl:'Itinéraire piéton',directionsUrl:'Itinéraire en voiture',sourceName:'Nom de la source officielle',src:'Photographie',alt:'Description de l’image',caption:'Légende',privacy:'Confidentialité',paragraphs:'Paragraphes',sections:'Rubriques',resources:'Conseils',cabinet:'Le cabinet',
     directions:'Adresse et itinéraires',practice:'Votre cabinet',home:'Accueil',team:'Équipe',services:'Soins',faq:'Questions fréquentes',pages:'Pages',legal:'Informations légales',seo:'Référencement',meta:'Sources et version',articles:'Conseils dentaires',
     name:'Nom',displayName:'Nom complet affiché',title:'Titre',titleAccent:'Suite du titre en accent',accent:'Texte en accent',description:'Description',summary:'Résumé',text:'Texte',body:'Paragraphes',intro:'Introduction',subtitle:'Sous-titre',eyebrow:'Surtitre',
     phone:'Téléphone affiché',phoneInternational:'Téléphone international',email:'Adresse e-mail',address:'Adresse',postalCode:'Code postal',city:'Ville',department:'Département',country:'Pays',hours:'Horaires',hoursSummary:'Horaires résumés',day:'Jour',periods:'Plages horaires',
@@ -78,7 +78,7 @@
     button.addEventListener('click', onClick);
     return button;
   }
-  const isImage = key => /^(image|photo|avatar|logo|heroImage|cabinetImage|cabinetSecondImage|ogImage|cover|src)$/i.test(key);
+  const isImage = key => /^(image|photo|avatar|logo|heroImage|arrivalImage|cabinetImage|cabinetSecondImage|ogImage|cover|src)$/i.test(key);
   function field(value, path) {
     const key = String(path.at(-1));
     if (path.join('.') === 'practice.hours') return hoursEditor(value, path);
@@ -88,7 +88,7 @@
       details.open = path.length < 2;
       details.append(el('summary', '', label(key)));
       const body = el('div', 'object-body');
-      for (const [subkey, item] of Object.entries(value)) body.append(field(item, [...path, subkey]));
+      for (const [subkey, item] of Object.entries(value)) { if(path[0]==='team' && subkey==='qualifications' && Array.isArray(value.education)) continue; body.append(field(item, [...path, subkey])); }
       details.append(body);
       return details;
     }
@@ -160,16 +160,21 @@
     return '';
   }
   function newItem(path, array) {
-    if (path.length === 1 && path[0] === 'team') return { id:`membre-${Date.now()}`, name:'Nouveau membre', role:'', focus:'', qualifications:[], image:'', kind:'dentist' };
+    if (path.length === 1 && path[0] === 'team') return { id:`membre-${Date.now()}`, name:'Nouveau membre', role:'', focus:'', qualifications:[], education:[], institutionLinks:[], image:'', kind:'dentist' };
     if (path.length === 1 && path[0] === 'services') return { id:`soin-${Date.now()}`, slug:`nouveau-soin-${Date.now()}`, title:'Nouveau soin', subtitle:'', summary:'', intro:'', body:[], treatments:[], practitionerIds:[], educationalLinks:[], image:'', icon:'sparkle', seoTitle:'', seoDescription:'' };
     if (path.length === 1 && path[0] === 'faq') return { question:'Nouvelle question', answer:'' };
-    if (path.length === 1 && path[0] === 'articles') return { slug:`nouvel-article-${Date.now()}`, title:'Nouvel article', description:'', category:'implantologie', paragraphs:[], image:'', sourceDate:'', sourceUrl:'' };
+    if (path.length === 1 && path[0] === 'articles') return { slug:`nouvel-article-${Date.now()}`, title:'Nouvel article', description:'', category:'implantologie', paragraphs:[], sections:[], questions:[], consultationQuestions:[], localContext:'', sources:[], image:'', sourceDate:'', sourceUrl:'' };
     if (path.join('.') === 'practice.hours') return {day:'Lundi',hours:'Fermé',periods:[]};
     if (path.join('.') === 'practice.equipment') return {name:'Nouvel équipement',summary:''};
     if (path.join('.') === 'pages.cabinet.images') return {src:'',alt:'',caption:''};
     if (path.join('.') === 'pages.privacy.sections') return {title:'Nouvelle rubrique',paragraphs:[]};
     if (path.join('.') === 'home.steps') return {title:'Nouvelle étape',text:''};
     if (path.at(-1) === 'periods') return ['08:00','12:00'];
+    if (path[0] === 'articles' && path.at(-1) === 'sections') return { id:`partie-${Date.now()}`, title:'Nouvelle partie', paragraphs:[] };
+    if (path[0] === 'articles' && path.at(-1) === 'questions') return {question:'Nouvelle question', answer:''};
+    if (path.at(-1) === 'education') return {title:'Nouvelle formation',links:[]};
+    if (['links','sources','institutionLinks'].includes(path.at(-1))) return {title:'',url:''};
+    if (path.at(-1) === 'parking') return {id:`parking-${Date.now()}`,name:'Nouveau parking',address:'',type:'Parking public',summary:'',sourceName:'',sourceUrl:'',mapUrl:'',directionsUrl:'',walkingUrl:''};
     if (array.length) return emptyLike(array[0]);
     if (path.at(-1) === 'educationalLinks') return { title:'', url:'' };
     if (path.at(-1) === 'periods') return ['08:00','12:00'];
@@ -191,7 +196,7 @@
       const down = makeButton('↓','icon-button',() => { [array[index+1],array[index]]=[array[index],array[index+1]];markDirty();renderSection(); }); down.disabled=index===array.length-1;down.setAttribute('aria-label',`Descendre ${caption}`);
       const remove = makeButton('×','icon-button delete',() => { if (window.confirm(`Retirer « ${caption} » ? L’enregistrement sera nécessaire pour appliquer cette modification.`)) {array.splice(index,1);markDirty();renderSection();} });remove.setAttribute('aria-label',`Retirer ${caption}`);
       actions.append(up,down,remove);cardHeader.append(actions);card.append(cardHeader);
-      if (item && typeof item === 'object' && !Array.isArray(item)) for(const [key,value] of Object.entries(item)) card.append(field(value,[...path,index,key]));
+      if (item && typeof item === 'object' && !Array.isArray(item)) for(const [key,value] of Object.entries(item)) { if(path[0]==='team' && key==='qualifications' && Array.isArray(item.education)) continue; card.append(field(value,[...path,index,key])); }
       else card.append(field(item,[...path,index]));
       wrapper.append(card);
     });

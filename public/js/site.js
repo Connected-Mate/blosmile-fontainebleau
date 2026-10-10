@@ -17,7 +17,7 @@
     const header = document.querySelector('.site-header');
     if (!button || !nav || !header) return;
 
-    const desktop = window.matchMedia('(min-width: 701px)');
+    const desktop = window.matchMedia('(min-width: 1151px)');
     const isOpen = () => button.getAttribute('aria-expanded') === 'true';
     function setOpen(open, restoreFocus = false) {
       button.setAttribute('aria-expanded', String(open));

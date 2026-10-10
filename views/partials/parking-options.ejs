@@ -1,0 +1,62 @@
+<%
+  const parkingCopy = content.pages?.directions || {};
+  const parkingEntries = Array.isArray(parkingCopy.parking) ? parkingCopy.parking : [];
+  const parkingHttps = value => {
+    try { return typeof value === 'string' && new URL(value).protocol === 'https:'; }
+    catch { return false; }
+  };
+%>
+<% if (parkingEntries.length) { %>
+<section class="parking-section wrap" aria-labelledby="parking-title">
+  <div class="parking-heading">
+    <div>
+      <p class="eyebrow">STATIONNER À <%= content.practice.city %></p>
+      <h2 id="parking-title">Une arrivée<br><em>bien préparée.</em></h2>
+    </div>
+    <p><%= parkingCopy.parkingNote || 'Choisissez votre parking, puis ouvrez le trajet à pied jusqu’au cabinet. Votre application vous indiquera le chemin et la durée estimée au moment de votre venue.' %></p>
+  </div>
+  <div class="parking-grid">
+    <% parkingEntries.forEach((parking, index) => { %>
+    <article class="parking-card">
+      <div class="parking-card-top">
+        <span class="parking-mark" aria-hidden="true">P</span>
+        <span class="parking-type"><%= parking.type || 'Parking public' %></span>
+      </div>
+      <h3><%= parking.name %></h3>
+      <% if (parkingHttps(parking.mapUrl)) { %>
+      <a class="parking-address" href="<%= parking.mapUrl %>" target="_blank" rel="noopener noreferrer" aria-label="Voir <%= parking.name %> sur la carte, <%= parking.address %>, nouvel onglet"><%- include('icon', {name:'pin'}) %><span><%= parking.address %></span></a>
+      <% } else { %>
+      <p class="parking-address"><%- include('icon', {name:'pin'}) %><span><%= parking.address %></span></p>
+      <% } %>
+      <% if (parking.summary) { %><p class="parking-description"><%= parking.summary %></p><% } %>
+      <div class="parking-actions">
+        <% if (parkingHttps(parking.directionsUrl)) { %>
+        <a class="parking-action parking-action-primary" href="<%= parking.directionsUrl %>" target="_blank" rel="noopener noreferrer" aria-label="Itinéraire en voiture vers <%= parking.name %>, nouvel onglet">Aller au parking <%- include('icon', {name:'upRight'}) %></a>
+        <% } %>
+        <% if (parkingHttps(parking.walkingUrl)) { %>
+        <a class="parking-action parking-action-walking" href="<%= parking.walkingUrl %>" target="_blank" rel="noopener noreferrer" aria-label="Itinéraire à pied de <%= parking.name %> au cabinet <%= content.practice.name %>, nouvel onglet">À pied jusqu’au cabinet <%- include('icon', {name:'arrow'}) %></a>
+        <% } %>
+      </div>
+    </article>
+    <% }) %>
+  </div>
+  <div class="parking-bottom">
+    <div class="parking-access-note">
+      <span class="parking-access-icon" aria-hidden="true"><%- include('icon', {name:'phone'}) %></span>
+      <div>
+        <h3>Préparons votre venue ensemble.</h3>
+        <p><%= parkingCopy.accessNote || 'Un besoin particulier pour accéder au cabinet ? Le secrétariat peut vous aider à organiser votre arrivée.' %> <a href="tel:<%= content.practice.phoneInternational %>">Appelez le <%= content.practice.phone %></a>.</p>
+      </div>
+    </div>
+    <details class="parking-sources">
+      <summary>Informations sur les parkings <%- include('icon', {name:'plus'}) %></summary>
+      <p>Retrouvez les horaires, tarifs et conditions auprès des gestionnaires et de l’office de tourisme.</p>
+      <ul>
+        <% parkingEntries.forEach(parking => { if (parkingHttps(parking.sourceUrl)) { %>
+        <li><a href="<%= parking.sourceUrl %>" target="_blank" rel="noopener noreferrer" aria-label="Informations officielles pour <%= parking.name %>, <%= parking.sourceName || 'site officiel' %>, nouvel onglet"><span><%= parking.name %><small><%= parking.sourceName || 'Site officiel' %></small></span><%- include('icon', {name:'upRight'}) %></a></li>
+        <% } }) %>
+      </ul>
+    </details>
+  </div>
+</section>
+<% } %>

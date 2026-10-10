@@ -56,7 +56,7 @@ Node.js **22.16 ou supérieur** est nécessaire (`node:sqlite`). La réalisation
 
 ## Ce qui est livré
 
-36 pages publiques : accueil complet, équipe (7 praticiens et 8 collaboratrices), cabinet et galerie, vue des soins, 4 pages détaillées, contact et horaires, adresse et itinéraires, FAQ, mentions légales, confidentialité, index des conseils et 22 fiches pédagogiques. Une véritable page 404 est également prévue.
+42 pages publiques : accueil complet, équipe (7 praticiens et 8 collaboratrices), cabinet et galerie, vue des soins, 4 pages détaillées, contact et horaires, adresse et itinéraires, FAQ, mentions légales, confidentialité, page collective des parcours et formations, blog filtrable et 27 fiches pédagogiques. Une véritable page 404 est également prévue.
 
 141 médias originaux sont archivés, avec des alias descriptifs pour les photographies utilisées. Les polices sont hébergées localement et leurs licences conservées. L’accueil réunit les coordonnées, les horaires, les soins, les praticiens, le cabinet, le parcours de visite et les réponses aux questions pratiques.
 
@@ -75,6 +75,16 @@ La navigation mobile, le carrousel et la galerie ont été renforcés : clavier,
 ## Avis Google
 
 L’accueil et le pied de page ouvrent la fiche vérifiée **Cabinets dentaires blosmile**, 192 Rue Grande, via son identifiant Google `ChIJ1eahBGH05UcRn10bSWzIWXI`. Les avis sont consultables dans la rubrique Avis de Google Maps. Aucun avis, nombre d’avis ou score n’est recopié ni simulé ; aucune synchronisation Google Places API n’est activée. Le lien est modifiable dans **Votre cabinet → Fiche Google et avis du cabinet**.
+
+## Équipe, blog et repères locaux
+
+La page `/formations` rassemble les cursus publiés des sept praticiens et les liens vérifiés vers les universités et organismes cités. Il s’agit d’une page collective, sans biographies individuelles inventées. Les intitulés historiques sont conservés ; les liens actuels ne valent pas authentification individuelle d’un diplôme.
+
+Le carnet `/conseils` propose 27 articles classés par thème, avec recherche sans accents, filtres et tous les liens disponibles sans JavaScript. Cinq guides couvrent désormais les gencives, les soins endodontiques et la première visite ; six fiches sur les implants et l’esthétique ont été approfondies. Les articles détaillés disposent d’un sommaire, de questions de consultation, de références et de liens vers l’équipe, les soins et l’accès. Les contenus de santé restent à valider par le cabinet avant lancement officiel.
+
+L’accueil montre un espace de soins réel. La photo de façade est conservée séparément pour guider les visiteurs. Les pages Accès et Contact présentent Damesme, Étape et Marché avec liens voiture et piéton. Aucun temps inférieur à cinq minutes ni disponibilité de place n’est affirmé.
+
+Recherche SEO datée : six cabinets de Fontainebleau, Avon et Barbizon comparés sur leurs informations publiques. Rapport interne dans `research/seo-fontainebleau-2026-10-10.md`, exclu du dépôt public. Les intentions proposées ne sont pas des volumes mesurés de recherche ; la preview reste non indexée.
 
 ## Modifier le contenu
 
@@ -98,7 +108,7 @@ npm run backup
 ```
 
 - `test` vérifie les parcours serveur, l’authentification, les droits, CSRF, les versions, les imports, le rendu des vraies pages, les liens internes et le référencement.
-- `check` rend les 37 vues (404 comprise), valide le contenu et contrôle l’existence des médias.
+- `check` rend les 43 vues (404 comprise), valide le contenu et contrôle l’existence des médias.
 - `health` vérifie les principales adresses du serveur démarré.
 - `backup` crée une copie cohérente de SQLite, un export JSON et une copie des médias dans `.local/backups/<date>`. Les sessions sont retirées de la sauvegarde. Cette opération fonctionne pendant que le serveur tourne.
 

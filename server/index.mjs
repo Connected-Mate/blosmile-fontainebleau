@@ -198,7 +198,7 @@ export function createApp(options = {}) {
   };
   const aliases = { '/l-equipe': '/equipe', '/nos-cabinets': '/le-cabinet', '/notre-clinique': '/le-cabinet', '/le-cabinet-dentaire': '/le-cabinet', '/implantologie': '/soins/implantologie', '/esthetique': '/soins/esthetique', '/endodontie': '/soins/endodontie', '/parodontologie': '/soins/parodontologie', '/contactez-nous': '/contact', '/contactez-nous-1': '/contact', '/politique-de-confidentialite': '/confidentialite', '/cgu': '/mentions-legales' };
   for (const [from, to] of Object.entries(aliases)) app.get(from, (req, res) => res.redirect(301, to));
-  for (const [path, page] of Object.entries({ '/': 'home', '/equipe': 'team', '/le-cabinet': 'cabinet', '/soins': 'services', '/contact': 'contact', '/venir': 'directions', '/questions-frequentes': 'faq', '/mentions-legales': 'legal', '/confidentialite': 'privacy' })) app.get(path, render(page));
+  for (const [path, page] of Object.entries({ '/': 'home', '/equipe': 'team', '/formations': 'formations', '/le-cabinet': 'cabinet', '/soins': 'services', '/contact': 'contact', '/venir': 'directions', '/questions-frequentes': 'faq', '/mentions-legales': 'legal', '/confidentialite': 'privacy' })) app.get(path, render(page));
   app.get('/soins/:slug', render('service'));
   app.get('/conseils', render('resources'));
   app.get('/conseils/:slug', render('article'));

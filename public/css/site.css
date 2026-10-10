@@ -56,7 +56,7 @@ img{color:var(--muted);font-size:12px}
   .photo-dialog img{max-height:75vh;max-height:75dvh}
   .photo-dialog p{overflow-wrap:anywhere}
 }
-@media(min-width:701px){.mobile-nav{display:none!important}}
+@media(min-width:1151px){.mobile-nav{display:none!important}}
 @media(hover:hover) and (pointer:fine){
   .gallery-item:hover>span{background:#fff}
   .button:active{transform:translateY(0)}

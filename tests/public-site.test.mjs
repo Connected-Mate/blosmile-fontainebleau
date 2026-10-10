@@ -14,7 +14,7 @@ test('all real public pages render, contain one h1, and have no broken internal 
   const {app,store}=createApp({dbPath:':memory:',accessPath:false,initialPassword:'temporary-test-only-password'});
   const server=app.listen(0,'127.0.0.1');await once(server,'listening');t.after(async()=>{await new Promise(resolve=>server.close(resolve));store.close();});
   const base=`http://127.0.0.1:${server.address().port}`;
-  const urls=['/','/equipe','/le-cabinet','/soins','/contact','/venir','/questions-frequentes','/mentions-legales','/confidentialite','/conseils',...seed.services.map(s=>'/soins/'+s.slug),...seed.articles.map(a=>'/conseils/'+a.slug)];
+  const urls=['/','/formations','/equipe','/le-cabinet','/soins','/contact','/venir','/questions-frequentes','/mentions-legales','/confidentialite','/conseils',...seed.services.map(s=>'/soins/'+s.slug),...seed.articles.map(a=>'/conseils/'+a.slug)];
   const resources=new Set();
   for(const url of urls){const r=await fetch(base+url);assert.equal(r.status,200,url);const html=await r.text();assert.equal((html.match(/<h1(?:\s|>)/g)||[]).length,1,url);assert.doesNotMatch(html,/\[object Object\]/,url);for(const[,ref]of html.matchAll(/(?:href|src)="(\/[^"#?]*)/g))resources.add(ref);const ld=html.match(/<script type="application\/ld\+json"[^>]*>([\s\S]+?)<\/script>/);assert.doesNotThrow(()=>JSON.parse(ld[1]));}
   for(const ref of resources){const response=await fetch(base+ref,{method:'HEAD'});assert.equal(response.status,200,ref);}
